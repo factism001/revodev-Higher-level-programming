@@ -333,9 +333,9 @@ Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/mast
 
 ```
 "guillaume@ubuntu:"~/py/0x00$ ./7-edges.py
-First 3 letters: Hol
-Last 2 letters: on
-Middle word: olberto
+"First 3 letters:" Hol
+"Last 2 letters:" on
+"Middle word:" olberto
 "guillaume@ubuntu:"~/py/0x00$ wc -l 7-edges.py
 8 7-edges.py
 "guillaume@ubuntu:"~/py/0x00$"
@@ -344,9 +344,9 @@ Middle word: olberto
 
 **Repo:**
 
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x00-python-hello_world`
--   File: `7-edges.py`
+-   "GitHub repository:" `alx-higher_level_programming`
+-   "Directory:" `0x00-python-hello_world`
+-   "File:" `7-edges.py`
 
 **8\. Create a new sentence**
 
@@ -361,7 +361,7 @@ Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/mast
 -   You are not allowed to use string literals
 
 ```
-"guillaume@ubuntu:~/py/0x00$ ./8-concat_edges.py
+"guillaume@ubuntu:"~/py/0x00$ ./8-concat_edges.py
 object-oriented programming with Python
 guillaume@ubuntu:~/py/0x00$ wc -l 8-concat_edges.py
 5 8-concat_edges.py
