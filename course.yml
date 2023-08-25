@@ -204,9 +204,9 @@ guillaume@ubuntu:~/py/0x00$"
 
 **Repo:**
 
--   "GitHub repository: `alx-higher_level_programming`"
--   "Directory: `0x00-python-hello_world`"
--   "File: `2-print.py`"
+-   "GitHub repository:" `alx-higher_level_programming`
+-   "Directory:" `0x00-python-hello_world`
+-   "File:" `2-print.py`
 
 **3\. Print integer**
 
@@ -225,7 +225,7 @@ Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/mast
 ```
 guillaume@ubuntu:~/py/0x00$ ./3-print_number.py
 98 Battery street
-"guillaume@ubuntu:~/py/0x00$"
+"guillaume@ubuntu:"~/py/0x00$
 
 ```
 
@@ -233,9 +233,9 @@ guillaume@ubuntu:~/py/0x00$ ./3-print_number.py
 
 **Repo:**
 
--   "GitHub repository: `alx-higher_level_programming`"
--   "Directory: `0x00-python-hello_world`"
--   "File: `3-print_number.py`"
+-   "GitHub repository:" `alx-higher_level_programming`
+-   "Directory:" `0x00-python-hello_world`
+-   "File:" `3-print_number.py`
 
 **4\. Print float**
 
@@ -252,8 +252,8 @@ Complete the source code in order to print the float stored in the variable `num
 
 ```
 guillaume@ubuntu:~/py/0x00$ ./4-print_float.py
-Float: 3.14
-"guillaume@ubuntu:~/py/0x00$"
+"Float:" 3.14
+"guillaume@ubuntu:"~/py/0x00$
 
 ```
 
@@ -279,18 +279,18 @@ Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/mast
 -   Your program should be maximum 5 lines long
 
 ```
-guillaume@ubuntu:~/py/0x00$ ./5-print_string.py
+"guillaume@ubuntu:"~/py/0x00$ ./5-print_string.py
 Holberton SchoolHolberton SchoolHolberton School
 Holberton
-"guillaume@ubuntu:~/py/0x00$"
+"guillaume@ubuntu:"~/py/0x00$
 
 ```
 
 **Repo:**
 
--   "GitHub repository: `alx-higher_level_programming`"
--   "Directory: `0x00-python-hello_world`"
--   "File: `5-print_string.py`"
+-   "GitHub repository:" `alx-higher_level_programming`
+-   "Directory:" `0x00-python-hello_world`
+-   "File:" `5-print_string.py`
 
 **6\. Play with strings**
 
@@ -304,19 +304,19 @@ Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/mast
 -   Your program should be exactly 5 lines long
 
 ```
-guillaume@ubuntu:~/py/0x00$ ./6-concat.py
+"guillaume@ubuntu:"~/py/0x00$ ./6-concat.py
 Welcome to Holberton School!
-"guillaume@ubuntu:~/py/0x00$ wc -l 6-concat.py"
+"guillaume@ubuntu:"~/py/0x00$ wc -l 6-concat.py
 5 6-concat.py
-"guillaume@ubuntu:~/py/0x00$"
+"guillaume@ubuntu:"~/py/0x00$
 
 ```
 
 **Repo:**
 
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x00-python-hello_world`
--   File: `6-concat.py`
+-   "GitHub repository:" `alx-higher_level_programming`
+-   "Directory:" `0x00-python-hello_world`
+-   "File:" `6-concat.py`
 
 **7\. Copy - Cut - Paste**
 
@@ -332,13 +332,13 @@ Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/mast
 -   `middle_word` should contain the value of the variable `word` without the first and last letters
 
 ```
-"guillaume@ubuntu:~/py/0x00$ ./7-edges.py
+"guillaume@ubuntu:"~/py/0x00$ ./7-edges.py
 First 3 letters: Hol
 Last 2 letters: on
 Middle word: olberto
-guillaume@ubuntu:~/py/0x00$ wc -l 7-edges.py
+"guillaume@ubuntu:"~/py/0x00$ wc -l 7-edges.py
 8 7-edges.py
-guillaume@ubuntu:~/py/0x00$"
+"guillaume@ubuntu:"~/py/0x00$"
 
 ```
 
