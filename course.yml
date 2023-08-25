@@ -204,9 +204,9 @@ guillaume@ubuntu:~/py/0x00$"
 
 **Repo:**
 
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x00-python-hello_world`
--   File: `2-print.py`
+-   "GitHub repository: `alx-higher_level_programming`"
+-   "Directory: `0x00-python-hello_world`"
+-   "File: `2-print.py`"
 
 **3\. Print integer**
 
@@ -225,7 +225,7 @@ Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/mast
 ```
 guillaume@ubuntu:~/py/0x00$ ./3-print_number.py
 98 Battery street
-guillaume@ubuntu:~/py/0x00$
+"guillaume@ubuntu:~/py/0x00$"
 
 ```
 
@@ -233,9 +233,9 @@ guillaume@ubuntu:~/py/0x00$
 
 **Repo:**
 
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x00-python-hello_world`
--   File: `3-print_number.py`
+-   "GitHub repository: `alx-higher_level_programming`"
+-   "Directory: `0x00-python-hello_world`"
+-   "File: `3-print_number.py`"
 
 **4\. Print float**
 
@@ -253,15 +253,15 @@ Complete the source code in order to print the float stored in the variable `num
 ```
 guillaume@ubuntu:~/py/0x00$ ./4-print_float.py
 Float: 3.14
-guillaume@ubuntu:~/py/0x00$
+"guillaume@ubuntu:~/py/0x00$"
 
 ```
 
 **Repo:**
 
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x00-python-hello_world`
--   File: `4-print_float.py`
+-   "GitHub repository: `alx-higher_level_programming`"
+-   "Directory: `0x00-python-hello_world`"
+-   "File: `4-print_float.py`"
 
 **5\. Print string**
 
@@ -282,15 +282,15 @@ Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/mast
 guillaume@ubuntu:~/py/0x00$ ./5-print_string.py
 Holberton SchoolHolberton SchoolHolberton School
 Holberton
-guillaume@ubuntu:~/py/0x00$
+"guillaume@ubuntu:~/py/0x00$"
 
 ```
 
 **Repo:**
 
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x00-python-hello_world`
--   File: `5-print_string.py`
+-   "GitHub repository: `alx-higher_level_programming`"
+-   "Directory: `0x00-python-hello_world`"
+-   "File: `5-print_string.py`"
 
 **6\. Play with strings**
 
@@ -306,9 +306,9 @@ Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/mast
 ```
 guillaume@ubuntu:~/py/0x00$ ./6-concat.py
 Welcome to Holberton School!
-guillaume@ubuntu:~/py/0x00$ wc -l 6-concat.py
+"guillaume@ubuntu:~/py/0x00$ wc -l 6-concat.py"
 5 6-concat.py
-guillaume@ubuntu:~/py/0x00$
+"guillaume@ubuntu:~/py/0x00$"
 
 ```
 
@@ -318,7 +318,7 @@ guillaume@ubuntu:~/py/0x00$
 -   Directory: `0x00-python-hello_world`
 -   File: `6-concat.py`
 
-### 7\. Copy - Cut - Paste
+**7\. Copy - Cut - Paste**
 
 mandatory
 
@@ -332,13 +332,13 @@ Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/mast
 -   `middle_word` should contain the value of the variable `word` without the first and last letters
 
 ```
-guillaume@ubuntu:~/py/0x00$ ./7-edges.py
+"guillaume@ubuntu:~/py/0x00$ ./7-edges.py
 First 3 letters: Hol
 Last 2 letters: on
 Middle word: olberto
 guillaume@ubuntu:~/py/0x00$ wc -l 7-edges.py
 8 7-edges.py
-guillaume@ubuntu:~/py/0x00$
+guillaume@ubuntu:~/py/0x00$"
 
 ```
 
@@ -361,19 +361,19 @@ Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/mast
 -   You are not allowed to use string literals
 
 ```
-guillaume@ubuntu:~/py/0x00$ ./8-concat_edges.py
+"guillaume@ubuntu:~/py/0x00$ ./8-concat_edges.py
 object-oriented programming with Python
 guillaume@ubuntu:~/py/0x00$ wc -l 8-concat_edges.py
 5 8-concat_edges.py
-guillaume@ubuntu:~/py/0x00$
+guillaume@ubuntu:~/py/0x00$"
 
 ```
 
 **Repo:**
 
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x00-python-hello_world`
--   File: `8-concat_edges.py`
+-   "GitHub repository: `alx-higher_level_programming`"
+-   "Directory: `0x00-python-hello_world`"
+-   "File: `8-concat_edges.py`"
 
 **9\. Easter Egg**
 
@@ -384,7 +384,7 @@ Write a Python script that prints "The Zen of Python", by TimPeters, followed by
 -   Your script should be maximum 98 characters long (please check with `wc -m 9-easter_egg.py`)
 
 ```
-guillaume@ubuntu:~/py/0x00$ ./9-easter_egg.py
+"guillaume@ubuntu:~/py/0x00$ ./9-easter_egg.py"
 The Zen of Python, by Tim Peters
 
 Beautiful is better than ugly.
@@ -406,7 +406,7 @@ Although never is often better than *right* now.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
-guillaume@ubuntu:~/py/0x00$
+"guillaume@ubuntu:~/py/0x00$"
 
 ```
 
@@ -420,7 +420,7 @@ guillaume@ubuntu:~/py/0x00$
 
 mandatory
 
-**Technical interview preparation**:
+**Technical interview preparation:**
 
 -   You are not allowed to google anything
 -   Whiteboard first
@@ -436,7 +436,7 @@ Write a function in C that checks if a singly linked list has a cycle in it.
 -   "Only these functions are allowed:" `write`, `printf`, `putchar`, `puts`, `malloc`, `free`
 
 ```
-carrie@ubuntu:~/0x00$ cat lists.h
+"carrie@ubuntu:~/0x00$ cat lists.h"
 #ifndef LISTS_H
 #define LISTS_H
 
@@ -473,8 +473,8 @@ carrie@ubuntu:~/0x00$ cat 10-linked_lists.c
 
 /**
  * print_listint - prints all elements of a listint_t list
- * @h: pointer to head of list
- * Return: number of nodes
+ * "@h: pointer to head of list"
+ * "Return: number of nodes"
  */
 size_t print_listint(const listint_t *h)
 {
@@ -493,12 +493,12 @@ size_t print_listint(const listint_t *h)
     return (n);
 }
 
-/**
+"/**
  * add_nodeint - adds a new node at the beginning of a listint_t list
  * @head: pointer to a pointer of the start of the list
  * @n: integer to be included in node
  * Return: address of the new element or NULL if it fails
- */
+ */"
 listint_t *add_nodeint(listint_t **head, const int n)
 {
     listint_t *new;
@@ -514,11 +514,11 @@ listint_t *add_nodeint(listint_t **head, const int n)
     return (new);
 }
 
-/**
+"/**
  * free_listint - frees a listint_t list
  * @head: pointer to list to be freed
  * Return: void
- */
+ */"
 void free_listint(listint_t *head)
 {
     listint_t *current;
@@ -534,7 +534,7 @@ void free_listint(listint_t *head)
 ```
 
 ```
-carrie@ubuntu:~/0x00$ cat 10-main.c
+"carrie@ubuntu:~/0x00$ cat 10-main.c"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
