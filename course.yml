@@ -80,7 +80,7 @@ Requirements
 
 **Shell Scripts**
 
--   Allowed editors: `vi`, `vim`, `emacs`
+-   "Allowed editors:" `vi`, `vim`, `emacs`
 -   All your scripts will be tested on Ubuntu 20.04 LTS
 -   All your scripts should be exactly two lines long (`wc -l file` should print 2)
 -   All your files should end with a new line
@@ -188,7 +188,7 @@ guillaume@ubuntu:~/py/0x00$
 -   File: `1-run_inline`
 
 **2\. Hello, print**
-
+@
 mandatory
 
 Write a Python script that prints exactly `"Programming is like building a multilingual puzzle`, followed by a new line.
@@ -237,7 +237,7 @@ guillaume@ubuntu:~/py/0x00$
 -   Directory: `0x00-python-hello_world`
 -   File: `3-print_number.py`
 
-### 4\. Print float
+**4\. Print float**
 
 mandatory
 
@@ -263,7 +263,7 @@ guillaume@ubuntu:~/py/0x00$
 -   Directory: `0x00-python-hello_world`
 -   File: `4-print_float.py`
 
-### 5\. Print string
+**5\. Print string**
 
 mandatory
 
@@ -292,7 +292,7 @@ guillaume@ubuntu:~/py/0x00$
 -   Directory: `0x00-python-hello_world`
 -   File: `5-print_string.py`
 
-### 6\. Play with strings
+**6\. Play with strings**
 
 mandatory
 
@@ -348,7 +348,7 @@ guillaume@ubuntu:~/py/0x00$
 -   Directory: `0x00-python-hello_world`
 -   File: `7-edges.py`
 
-### 8\. Create a new sentence
+**8\. Create a new sentence**
 
 mandatory
 
@@ -375,7 +375,7 @@ guillaume@ubuntu:~/py/0x00$
 -   Directory: `0x00-python-hello_world`
 -   File: `8-concat_edges.py`
 
-### 9\. Easter Egg
+**9\. Easter Egg**
 
 mandatory
 
@@ -416,7 +416,7 @@ guillaume@ubuntu:~/py/0x00$
 -   Directory: `0x00-python-hello_world`
 -   File: `9-easter_egg.py`
 
-### 10\. Linked list cycle
+**10\. Linked list cycle**
 
 mandatory
 
@@ -431,9 +431,9 @@ Write a function in C that checks if a singly linked list has a cycle in it.
 -   Prototype: `int check_cycle(listint_t *list);`
 -   Return: `0` if there is no cycle, `1` if there is a cycle
 
-Requirements:
+"Requirements:"
 
--   Only these functions are allowed: `write`, `printf`, `putchar`, `puts`, `malloc`, `free`
+-   "Only these functions are allowed:" `write`, `printf`, `putchar`, `puts`, `malloc`, `free`
 
 ```
 carrie@ubuntu:~/0x00$ cat lists.h
