@@ -244,7 +244,7 @@ mandatory
 Complete the source code in order to print the float stored in the variable `number` with a precision of 2 digits.
 
 -   You can find the source code [here](https://github.com/holbertonschool/0x00.py/blob/master/4-print_float.py "here")
--   The output of the program should be:
+-   "The output of the program should be:"
     -   `Float:`, followed by the float with only 2 digits
      -   followed by a new line
 -   You are not allowed to cast `number` to string
@@ -270,7 +270,7 @@ mandatory
 Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/master/5-print_string.py "source code") in order to print 3 times a string stored in the variable `str`, followed by its first 9 characters.
 
 -   You can find the source code [here](https://github.com/holbertonschool/0x00.py/blob/master/5-print_string.py "here")
--   The output of the program should be:
+-   "The output of the program should be:"
     -   3 times the value of `str`
     -   followed by a new line
     -   followed by the 9 first characters of `str`
