@@ -450,7 +450,8 @@ carrie@ubuntu:~/0x00$ cat lists.h
 # * Description: singly linked list node structure
 # *
 # */
-code_snippet: |
+
+"code_snippet:" |
  typedef struct listint_s
  {
      int n;
