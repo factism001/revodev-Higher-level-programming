@@ -371,9 +371,9 @@ guillaume@ubuntu:~/py/0x00$"
 
 **Repo:**
 
--   "GitHub repository: `alx-higher_level_programming`"
--   "Directory: `0x00-python-hello_world`"
--   "File: `8-concat_edges.py`"
+-   "GitHub repository:" `alx-higher_level_programming`
+-   "Directory:" `0x00-python-hello_world`
+-   "File:" `8-concat_edges.py`
 
 **9\. Easter Egg**
 
@@ -406,15 +406,15 @@ Although never is often better than *right* now.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
-"guillaume@ubuntu:~/py/0x00$"
+"guillaume@ubuntu:"~/py/0x00$
 
 ```
 
 **Repo:**
 
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x00-python-hello_world`
--   File: `9-easter_egg.py`
+-   "GitHub repository:" `alx-higher_level_programming`
+-   "Directory:" `0x00-python-hello_world`
+-   "File:" `9-easter_egg.py`
 
 **10\. Linked list cycle**
 
@@ -428,15 +428,15 @@ mandatory
 
 Write a function in C that checks if a singly linked list has a cycle in it.
 
--   Prototype: `int check_cycle(listint_t *list);`
--   Return: `0` if there is no cycle, `1` if there is a cycle
+-   "Prototype:" `int check_cycle(listint_t *list);`
+-   "Return:" `0` if there is no cycle, `1` if there is a cycle
 
 "Requirements:"
 
 -   "Only these functions are allowed:" `write`, `printf`, `putchar`, `puts`, `malloc`, `free`
 
 ```
-"carrie@ubuntu:~/0x00$ cat lists.h"
+carrie@ubuntu:~/0x00$ cat lists.h
 #ifndef LISTS_H
 #define LISTS_H
 
