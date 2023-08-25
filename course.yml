@@ -174,7 +174,7 @@ Write a Shell script that runs Python code.
 The Python code will be saved in the environment variable `$PYCODE`
 
 ```
-guillaume@ubuntu:~/py/0x00$ export PYCODE='print("Best School: {}".format(88+10))'
+"guillaume@ubuntu:~/py/0x00$ export PYCODE='print("Best School:" {}".format(88+10))'
 guillaume@ubuntu:~/py/0x00$ ./1-run_inline
 Best School: 98
 guillaume@ubuntu:~/py/0x00$
@@ -246,7 +246,7 @@ Complete the source code in order to print the float stored in the variable `num
 -   You can find the source code [here](https://github.com/holbertonschool/0x00.py/blob/master/4-print_float.py "here")
 -   The output of the program should be:
     -   `Float:`, followed by the float with only 2 digits
-    -   followed by a new line
+     -   followed by a new line
 -   You are not allowed to cast `number` to string
 -   You have to use the new print formatting [tips](https://alx-intranet.hbtn.io/rltoken/toJsJHysB36TdCBuj0nN1Q "tips") (with `.format(...)`)
 
