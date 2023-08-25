@@ -150,7 +150,7 @@ The Python file name will be saved in the environment variable `$PYFILE`
 ```
 guillaume@ubuntu:~/py/0x00$ cat main.py
 #!/usr/bin/python3
-print("Best School")
+"print("Best School")"
 
 guillaume@ubuntu:~/py/0x00$ export PYFILE=main.py
 guillaume@ubuntu:~/py/0x00$ ./0-run
@@ -161,9 +161,9 @@ guillaume@ubuntu:~/py/0x00$
 
 **Repo:**
 
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x00-python-hello_world`
--   File: `0-run`
+-   "GitHub repository:" `alx-higher_level_programming`
+-   "Directory:" `0x00-python-hello_world`
+-   "File:" `0-run`
 
 **1\. Run inline**
 
