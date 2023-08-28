@@ -1,17 +1,59 @@
-chunks:
+title: "Python Hello World"
+description: |
+
+    # Python Hello World Project
+
+rules:
+    start:
+    -
+        if_has_role: [instructor, ta, student]
+        if_has_fewer_sessions_than: 2
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        if_has_role: [instructor, ta, student]
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    access:
+    -
+        if_has_role: [unenrolled]
+        permissions: []
+
+    -
+        if_before: end_week 2
+        permissions: [view, modfy, submit_answer, end_session, see_session_time]
+        message: "Welcome"
+
+    -
+        permissions: [view, modify submit_answer, end_session, see_session_time]
+
+    grade_identifier: python_hello_world_score
+    grade_aggregation_strategy: max_grade
+
+    grading:
+    -
+        if_completed_before: end_week 1
+        credit_percent: 100
+
+    -
+        if_completed_before: end_week 2
+        credit_percent: 65
+    
+    -
+        credit_percent: 50
+
+
+pages:
 
 -
-    title: "Welcome to the sample course"
+    type: Page
     id: welcome
-    rules:
-    -
-        if_after: end_week 3
-        if_before: 2038-01-01 13:00:00 -5
-        weight: 100
-
-    -
-        weight: 0
-
     content: |
 
         # Hi there!
@@ -153,6 +195,13 @@ chunks:
 
         ![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/231/Flyingcircus_2.jpg)
 
+-
+    type: HumanGradedTextQuestion
+    id: hgtext
+    value: 5
+    widget: textarea
+    content: |
+
         Tasks
         -----
 
@@ -181,9 +230,23 @@ chunks:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x00-python-hello_world`
         -   File: `0-run`
+        
+        rubric: |
 
+        Has something interesting to say.
+
+-
+    type: HumanGradedTextQuestion
+    id: hgtext2
+    value: 5
+    widget: textarea
+    content: |
+
+        Tasks
+        -----
+        
         ### 1\. Run inline
-
+        
         mandatory
 
         Write a Shell script that runs Python code.
@@ -204,6 +267,20 @@ chunks:
         -   Directory: `0x00-python-hello_world`
         -   File: `1-run_inline`
 
+        rubric: |
+        
+        Has something interesting to say.
+
+-
+    type: HumanGradedTextQuestion
+    id: hgtext3
+    value: 5
+    widget: textarea
+    content: |
+
+        Tasks
+        -----
+        
         ### 2\. Hello, print
 
         mandatory
@@ -224,6 +301,20 @@ chunks:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x00-python-hello_world`
         -   File: `2-print.py`
+
+        rubric: |
+
+        Has something interesting to say.
+
+-
+    type: HumanGradedTextQuestion
+    id: hgtext4
+    value: 5
+    widget: textarea
+    content: |
+
+        Tasks
+        -----
 
         ### 3\. Print integer
 
@@ -254,6 +345,20 @@ chunks:
         -   Directory: `0x00-python-hello_world`
         -   File: `3-print_number.py`
 
+        rubric: |
+
+        Has something interesting to say.
+
+-
+    type: HumanGradedTextQuestion
+    id: hgtext5
+    value: 5
+    widget: textarea
+    content: |
+
+        Tasks
+        -----
+
         ### 4\. Print float
 
         mandatory
@@ -279,6 +384,20 @@ chunks:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x00-python-hello_world`
         -   File: `4-print_float.py`
+
+        rubric: |
+
+        Has something interesting to say.
+
+-
+    type: HumanGradedTextQuestion
+    id: hgtext6
+    value: 5
+    widget: textarea
+    content: |
+
+        Tasks
+        -----
 
         ### 5\. Print string
 
@@ -309,6 +428,16 @@ chunks:
         -   Directory: `0x00-python-hello_world`
         -   File: `5-print_string.py`
 
+-
+    type: HumanGradedTextQuestion
+    id: hgtext7
+    value: 5
+    widget: textarea
+    content: |
+
+        Tasks
+        -----
+
         ### 6\. Play with strings
 
         mandatory
@@ -334,6 +463,16 @@ chunks:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x00-python-hello_world`
         -   File: `6-concat.py`
+
+-
+    type: HumanGradedTextQuestion
+    id: hgtext8
+    value: 5
+    widget: textarea
+    content: |
+
+        Tasks
+        -----
 
         ### 7\. Copy - Cut - Paste
 
@@ -365,6 +504,16 @@ chunks:
         -   Directory: `0x00-python-hello_world`
         -   File: `7-edges.py`
 
+-
+    type: HumanGradedTextQuestion
+    id: hgtext9
+    value: 5
+    widget: textarea
+    content: |
+
+        Tasks
+        -----
+
         ### 8\. Create a new sentence
 
         mandatory
@@ -391,6 +540,16 @@ chunks:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x00-python-hello_world`
         -   File: `8-concat_edges.py`
+
+-
+    type: HumanGradedTextQuestion
+    id: hgtext10
+    value: 5
+    widget: textarea
+    content: |
+
+        Tasks
+        -----
 
         ### 9\. Easter Egg
 
@@ -432,6 +591,16 @@ chunks:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x00-python-hello_world`
         -   File: `9-easter_egg.py`
+
+-
+    type: HumanGradedTextQuestion
+    id: hgtext3
+    value: 5
+    widget: textarea
+    content: |
+
+        Tasks
+        -----
 
         ### 10\. Linked list cycle
 
@@ -632,3 +801,7 @@ chunks:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x00-python-hello_world`
         -   File: `10-check_cycle.c, lists.h`
+
+completion_text: |
+
+    You have successfully completed the test exam!
