@@ -2,6 +2,7 @@ chunks:
 
 -
     title: "Python Hello World"
+    id: welcome
     description: |
 
         # Python Hello World Project
