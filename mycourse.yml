@@ -53,7 +53,7 @@ chunks:
             credit_percent: 50
 
 
-    pages:
+    content: |
 
     -
         type: Page
