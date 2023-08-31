@@ -1,3 +1,5 @@
+chunks:
+
 title: "RELATE Test Quiz"
 description: |
 
@@ -48,7 +50,7 @@ pages:
     id: hgtext
     value: 5
     widget: textarea
-    content: |
+    prompt: |
 
         Tasks
         -----
@@ -79,16 +81,16 @@ pages:
             -   Directory: `0x00-python-hello_world`
             -   File: `0-run`
             
-            rubric: |
+    rubric: |
 
             Has something interesting to say.
 
 -
-        type: HumanGradedTextQuestion
-        id: hgtext2
-        value: 5
-        widget: textarea
-        content: |
+    type: HumanGradedTextQuestion
+    id: hgtext2
+    value: 5
+    widget: textarea
+    content: |
 
             Tasks
             -----
@@ -119,7 +121,7 @@ pages:
             
             Has something interesting to say.
 
-    -
+-
         type: HumanGradedTextQuestion
         id: hgtext3
         value: 5
@@ -150,11 +152,11 @@ pages:
             -   Directory: `0x00-python-hello_world`
             -   File: `2-print.py`
 
-            rubric: |
+        rubric: |
 
             Has something interesting to say.
 
-    -
+-
         type: HumanGradedTextQuestion
         id: hgtext4
         value: 5
@@ -193,11 +195,11 @@ pages:
             -   Directory: `0x00-python-hello_world`
             -   File: `3-print_number.py`
 
-            rubric: |
+        rubric: |
 
             Has something interesting to say.
 
-    -
+-
         type: HumanGradedTextQuestion
         id: hgtext5
         value: 5
@@ -233,11 +235,11 @@ pages:
             -   Directory: `0x00-python-hello_world`
             -   File: `4-print_float.py`
 
-            rubric: |
+        rubric: |
 
             Has something interesting to say.
 
-    -
+-
         type: HumanGradedTextQuestion
         id: hgtext6
         value: 5
@@ -275,13 +277,17 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x00-python-hello_world`
             -   File: `5-print_string.py`
+        
+        rubric: |
 
-    -
+            Has something interesting to say.
+
+-
         type: HumanGradedTextQuestion
         id: hgtext7
         value: 5
         widget: textarea
-        content: |
+        prompt: |
 
             Tasks
             -----
@@ -311,8 +317,12 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x00-python-hello_world`
             -   File: `6-concat.py`
+        rubric: |
 
-    -
+            Has something interesting to say.
+
+
+-
         type: HumanGradedTextQuestion
         id: hgtext8
         value: 5
@@ -351,8 +361,12 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x00-python-hello_world`
             -   File: `7-edges.py`
+        rubric: |
 
-    -
+            Has something interesting to say.
+
+
+-
         type: HumanGradedTextQuestion
         id: hgtext9
         value: 5
@@ -388,8 +402,11 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x00-python-hello_world`
             -   File: `8-concat_edges.py`
+        rubric: |
 
-    -
+            Has something interesting to say.
+
+-
         type: HumanGradedTextQuestion
         id: hgtext10
         value: 5
@@ -439,8 +456,11 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x00-python-hello_world`
             -   File: `9-easter_egg.py`
+        rubric: |
 
-    -
+            Has something interesting to say.
+
+-
         type: HumanGradedTextQuestion
         id: hgtext3
         value: 5
@@ -649,7 +669,11 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x00-python-hello_world`
             -   File: `10-check_cycle.c, lists.h`
+        rubric: |
 
-    completion_text: |
+            Has something interesting to say.
+
+
+completion_text: |
 
         You have successfully completed the test exam!
