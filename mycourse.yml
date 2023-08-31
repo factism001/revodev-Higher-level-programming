@@ -170,4 +170,4 @@ chunks:
 
         # Welcome to the computer-based testing facility!
 
-        <a href="flows:"python_hello_world_task.yml" class="btn btn-secondary">Start tas &raquo;</a>
+        <a href="flow:python_hello_world_task.yml" class="btn btn-secondary">Start tas &raquo;</a>
