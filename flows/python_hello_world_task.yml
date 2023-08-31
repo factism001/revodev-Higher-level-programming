@@ -168,7 +168,7 @@ pages:
             Has something interesting to say.
 
 -
-        type: PythonCodeQuestionWithHumanTextFeedback
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext4
     access_rules:
         add_permissions:
