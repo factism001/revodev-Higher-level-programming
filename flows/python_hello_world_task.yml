@@ -46,10 +46,15 @@ rules:
 pages:
 
 -
-    type: HumanGradedTextQuestion
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext
+    access_rules:
+        add_permissions:
+            - change_answer
     value: 5
-    widget: textarea
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
     prompt: |
 
         Tasks
@@ -65,33 +70,36 @@ pages:
 
         ```
         guillaume@ubuntu:~/py/0x00$ cat main.py
-            #!/usr/bin/python3
-            print("Best School")
+        #!/usr/bin/python3
+        print("Best School")
+        guillaume@ubuntu:~/py/0x00$ export PYFILE=main.py
+        guillaume@ubuntu:~/py/0x00$ ./0-run
+        Best School
+        guillaume@ubuntu:~/py/0x00$
+        ```
 
-            guillaume@ubuntu:~/py/0x00$ export PYFILE=main.py
-            guillaume@ubuntu:~/py/0x00$ ./0-run
-            Best School
-            guillaume@ubuntu:~/py/0x00$
+        **Repo:**
 
-            ```
-
-            **Repo:**
-
-            -   GitHub repository: `alx-higher_level_programming`
-            -   Directory: `0x00-python-hello_world`
-            -   File: `0-run`
+        -   GitHub repository: `alx-higher_level_programming`
+        -   Directory: `0x00-python-hello_world`
+        -   File: `0-run`
             
     rubric: |
 
             Has something interesting to say.
 
 -
-    type: HumanGradedTextQuestion
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
     value: 5
-    widget: textarea
-    content: |
-
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
             Tasks
             -----
             
@@ -117,16 +125,21 @@ pages:
             -   Directory: `0x00-python-hello_world`
             -   File: `1-run_inline`
 
-            rubric: |
+    rubric: |
             
             Has something interesting to say.
 
 -
-        type: HumanGradedTextQuestion
-        id: hgtext3
-        value: 5
-        widget: textarea
-        content: |
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext3
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
 
             Tasks
             -----
@@ -152,16 +165,21 @@ pages:
             -   Directory: `0x00-python-hello_world`
             -   File: `2-print.py`
 
-        rubric: |
+    rubric: |
 
             Has something interesting to say.
 
 -
-        type: HumanGradedTextQuestion
-        id: hgtext4
-        value: 5
-        widget: textarea
-        content: |
+        type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext4
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
 
             Tasks
             -----
@@ -195,16 +213,21 @@ pages:
             -   Directory: `0x00-python-hello_world`
             -   File: `3-print_number.py`
 
-        rubric: |
+    rubric: |
 
             Has something interesting to say.
 
 -
-        type: HumanGradedTextQuestion
-        id: hgtext5
-        value: 5
-        widget: textarea
-        content: |
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext5
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
 
             Tasks
             -----
@@ -235,16 +258,21 @@ pages:
             -   Directory: `0x00-python-hello_world`
             -   File: `4-print_float.py`
 
-        rubric: |
+    rubric: |
 
             Has something interesting to say.
 
 -
-        type: HumanGradedTextQuestion
-        id: hgtext6
-        value: 5
-        widget: textarea
-        content: |
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext6
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
 
             Tasks
             -----
@@ -253,7 +281,7 @@ pages:
 
             mandatory
 
-            Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/master/5-print_string.py "source code") in order to print 3 times a string stored in the variable `str`, followed by its first 9 characters.
+            Complete this [source code](https://github.com/holhgtextschool/0x00.py/blob/master/5-print_string.py "source code") in order to print 3 times a string stored in the variable `str`, followed by its first 9 characters.
 
             -   You can find the source code [here](https://github.com/holbertonschool/0x00.py/blob/master/5-print_string.py "here")
             -   The output of the program should be:
@@ -278,17 +306,21 @@ pages:
             -   Directory: `0x00-python-hello_world`
             -   File: `5-print_string.py`
         
-        rubric: |
+    rubric: |
 
             Has something interesting to say.
 
 -
-        type: HumanGradedTextQuestion
-        id: hgtext7
-        value: 5
-        widget: textarea
-        prompt: |
-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext7
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
             Tasks
             -----
 
@@ -317,17 +349,22 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x00-python-hello_world`
             -   File: `6-concat.py`
-        rubric: |
+    rubric: |
 
             Has something interesting to say.
 
 
 -
-        type: HumanGradedTextQuestion
-        id: hgtext8
-        value: 5
-        widget: textarea
-        content: |
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext8
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
 
             Tasks
             -----
@@ -361,17 +398,22 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x00-python-hello_world`
             -   File: `7-edges.py`
-        rubric: |
+    rubric: |
 
             Has something interesting to say.
 
 
 -
-        type: HumanGradedTextQuestion
-        id: hgtext9
-        value: 5
-        widget: textarea
-        content: |
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext9
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
 
             Tasks
             -----
@@ -402,16 +444,21 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x00-python-hello_world`
             -   File: `8-concat_edges.py`
-        rubric: |
+    rubric: |
 
             Has something interesting to say.
 
 -
-        type: HumanGradedTextQuestion
-        id: hgtext10
-        value: 5
-        widget: textarea
-        content: |
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext10
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
 
             Tasks
             -----
@@ -456,16 +503,21 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x00-python-hello_world`
             -   File: `9-easter_egg.py`
-        rubric: |
+    rubric: |
 
             Has something interesting to say.
 
 -
-        type: HumanGradedTextQuestion
-        id: hgtext3
-        value: 5
-        widget: textarea
-        content: |
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext11
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
 
             Tasks
             -----
@@ -669,7 +721,7 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x00-python-hello_world`
             -   File: `10-check_cycle.c, lists.h`
-        rubric: |
+    rubric: |
 
             Has something interesting to say.
 
