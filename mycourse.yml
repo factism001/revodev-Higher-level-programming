@@ -11,9 +11,9 @@ chunks:
 
     content: |
 
-        # Welcome to the course!
+            # Welcome to the course!
 
-        Please take our introductory [quiz](flow:quiz-intro).
+            Please take our introductory [quiz](flow:quiz-intro).
             # Hi there!
 
             0x00. Python - Hello, World
