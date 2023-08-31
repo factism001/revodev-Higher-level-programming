@@ -164,7 +164,7 @@ chunks:
         weight: 200
 
     -
-        shown: False
+        shown: True
         weight: 0
 
     content: |
