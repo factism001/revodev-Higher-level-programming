@@ -39,7 +39,17 @@ rules:
     grade_aggregation_strategy: max_grade
 
     grading:
-    -   credit_percent: 100
+    -   
+        if_completed_before: end_week 1
+        credit_percent: 100
+
+    -
+        if_completed_before: end_week 2
+        credit_percent: 65
+
+    -
+        if_completed_before: end_week 2
+        credit_percent: 0
 
 pages:
 
