@@ -48,7 +48,6 @@ rules:
         credit_percent: 65
 
     -
-        if_completed_before: end_week 2
         credit_percent: 0
 
 pages:
