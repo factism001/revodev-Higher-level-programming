@@ -13,7 +13,8 @@ chunks:
 
             # Welcome to the course!
 
-            Please take our introductory [quiz](flow:quiz-intro).
+            Please take our introductory [quiz](flow:quiz-test).
+            Or via here <a href="flow:quiz-test" role="button" class="btn btn-primary">Bootstrap button</a>.
             # Hi there!
 
             0x00. Python - Hello, World
