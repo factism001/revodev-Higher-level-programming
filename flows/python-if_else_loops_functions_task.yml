@@ -1,0 +1,296 @@
+title: "RELATE Test Quiz"
+description: |
+
+    # RELATE Test Quiz
+
+rules:
+    # (Things behind '#' hash marks are comments.)
+    # Allow students to start two attempts at the quiz before the deadline.
+    # After that, only allow access to previously started quizzes.
+
+    start:
+    -
+        if_after: 2015-03-06 23:59:00
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 2
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    # Allow students to submit quiz answers before the deadline.
+    # After the deadline, the quiz becomes read-only. (The 'modify'
+    # permission goes away.)
+
+    access:
+    -
+        if_after: 2015-03-06 23:59:02
+        permissions: [view, submit_answer, end_session, see_correctness]
+
+    -
+        permissions: [view, see_correctness, see_answer_after_submission]
+
+    # Record grades under the machine-readable name 'test_quiz'.
+    # If there is more than one grade, use the maximum.
+
+    grade_identifier: test_quiz
+    grade_aggregation_strategy: max_grade
+
+    grading:
+    -   
+        if_completed_before: end_week 1
+        credit_percent: 100
+
+    -
+        if_completed_before: end_week 2
+        credit_percent: 65
+
+    -
+        credit_percent: 0
+
+pages:
+
+-
+    type: PythonclearCodeQuestionWithHumanTextFeedback
+    id: hgtext
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+        Tasks
+        -----
+        ### 0\. Positive anything is better than negative nothing
+
+        mandatory
+
+        This program will assign a random signed number to the variable `number` each time it is executed. Complete the source code in order to print whether the number stored in the variable `number` is positive or negative.
+
+        -   You can find the source code [here](https://alx-intranet.hbtn.io/rltoken/rkvoXPA-lS3TAaemM9sChg "here")
+        -   The variable `number` will store a different value every time you will run this program
+        -   You don't have to understand what `import`, `random. randint` do. Please do not touch this code
+        -   The output of the program should be:
+            -   The number, followed by
+                -   if the number is greater than 0: `is positive`
+                -   if the number is 0: `is zero`
+                -   if the number is less than 0: `is negative`
+            -   followed by a new line
+
+        ```
+        guillaume@ubuntu:~/0x01$ ./0-positive_or_negative.py
+        -4 is negative
+        guillaume@ubuntu:~/0x01$ ./0-positive_or_negative.py
+        0 is zero
+        guillaume@ubuntu:~/0x01$ ./0-positive_or_negative.py
+        -3 is negative
+        guillaume@ubuntu:~/0x01$ ./0-positive_or_negative.py
+        -10 is negative
+        guillaume@ubuntu:~/0x01$ ./0-positive_or_negative.py
+        10 is positive
+        guillaume@ubuntu:~/0x01$ ./0-positive_or_negative.py
+        -5 is negative
+        guillaume@ubuntu:~/0x01$ ./0-positive_or_negative.py
+        6 is positive
+        guillaume@ubuntu:~/0x01$ ./0-positive_or_negative.py
+        7 is positive
+        guillaume@ubuntu:~/0x01$ ./0-positive_or_negative.py
+        5 is positive
+        guillaume@ubuntu:~/0x01$
+
+        ```
+
+        **Repo:**
+
+        -   GitHub repository: `alx-higher_level_programming`
+        -   Directory: `0x01-python-if_else_loops_functions`
+        -   File: `0-positive_or_negative.py`
+
+    rubric: |
+
+            Has something interesting to say.    
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+
+ -
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+
+ -
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----                                                                                                                      

@@ -53,7 +53,7 @@ rules:
 pages:
 
 -
-    type: PythonCodeQuestionWithHumanTextFeedback
+    type: PythonclearCodeQuestionWithHumanTextFeedback
     id: hgtext
     access_rules:
         add_permissions:
