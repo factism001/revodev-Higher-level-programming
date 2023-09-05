@@ -1,0 +1,387 @@
+title: "RELATE Test Quiz"
+description: |
+
+    # RELATE Test Quiz
+
+rules:
+    # (Things behind '#' hash marks are comments.)
+    # Allow students to start two attempts at the quiz before the deadline.
+    # After that, only allow access to previously started quizzes.
+
+    start:
+    -
+        if_after: 2015-03-06 23:59:00
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 2
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    # Allow students to submit quiz answers before the deadline.
+    # After the deadline, the quiz becomes read-only. (The 'modify'
+    # permission goes away.)
+
+    access:
+    -
+        if_after: 2015-03-06 23:59:02
+        permissions: [view, submit_answer, end_session, see_correctness]
+
+    -
+        permissions: [view, see_correctness, see_answer_after_submission]
+
+    # Record grades under the machine-readable name 'test_quiz'.
+    # If there is more than one grade, use the maximum.
+
+    grade_identifier: test_quiz
+    grade_aggregation_strategy: max_grade
+
+    grading:
+    -   
+        if_completed_before: end_week 1
+        credit_percent: 100
+
+    -
+        if_completed_before: end_week 2
+        credit_percent: 65
+
+    -
+        credit_percent: 0
+
+pages:
+
+-
+    type: PythonclearCodeQuestionWithHumanTextFeedback
+    id: hgtext
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+        Tasks
+        -----
+        ### 0\. Import a simple function from a simple file
+
+        mandatory
+
+        Write a program that imports the function `def add(a, b):` from the file `add_0.py` and prints the result of the addition `1 + 2 = 3`
+
+        -   You have to use `print` function with string format to display integers
+        -   You have to assign:
+            -   the value `1` to a variable called `a`
+            -   the value `2` to a variable called `b`
+            -   and use those two variables as arguments when calling the functions `add` and `print`
+        -   `a` and `b` must be defined in 2 different lines: `a = 1` and another `b = 2`
+        -   Your program should print: `<a value> + <b value> = <add(a, b) value>` followed with a new line
+        -   You can only use the word `add_0` once in your code
+        -   You are not allowed to use `*` for importing or `__import__`
+        -   Your code should not be executed when imported - by using `__import__`, like the example below
+
+        ```
+        guillaume@ubuntu:~/0x02$ cat add_0.py
+        #!/usr/bin/python3
+        def add(a, b):
+            """My addition function
+
+            Args:
+                a: first integer
+                b: second integer
+
+            Returns:
+                The return value. a + b
+            """
+            return (a + b)
+
+        guillaume@ubuntu:~/0x02$ ./0-add.py
+        1 + 2 = 3
+        guillaume@ubuntu:~/0x02$ cat 0-import_add.py
+        __import__("0-add")
+        guillaume@ubuntu:~/0x02$ python3 0-import_add.py
+        guillaume@ubuntu:~/0x02$
+
+        ```
+
+        **Repo:**
+
+        -   GitHub repository: `alx-higher_level_programming`
+        -   Directory: `0x02-python-import_modules`
+        -   File: `0-add.py`
+
+    rubric: |
+
+            Has something interesting to say.    
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext1
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+          Tasks
+          -----
+            ### 1\. The last digit
+
+            mandatory
+
+            This program will assign a random signed number to the variable `number` each time it is executed. Complete the source code in order to print the last digit of the number stored in the variable `number`.
+
+            -   You can find the source code [here](https://alx-intranet.hbtn.io/rltoken/hU682hcMxVchqWAcmh32tA "here")
+            -   The variable `number` will store a different value every time you will run this program
+            -   You don't have to understand what `import`, `random.randint` do. **Please do not touch this code**. This line should not change: `number = random.randint(-10000, 10000)`
+            -   The output of the program should be:
+                -   The string `Last digit of`, followed by
+                -   the number, followed by
+                -   the string `is`, followed by the last digit of `number`, followed by
+                    -   if the last digit is greater than 5: the string `and is greater than 5`
+                    -   if the last digit is 0: the string `and is 0`
+                    -   if the last digit is less than 6 and not 0: the string `and is less than 6 and not 0`
+                -   followed by a new line
+
+            ```
+            guillaume@ubuntu:~/0x01$ ./1-last_digit.py
+            Last digit of 4205 is 5 and is less than 6 and not 0
+            guillaume@ubuntu:~/0x01$ ./1-last_digit.py
+            Last digit of -626 is -6 and is less than 6 and not 0
+            guillaume@ubuntu:~/0x01$ ./1-last_digit.py
+            Last digit of 1144 is 4 and is less than 6 and not 0
+            guillaume@ubuntu:~/0x01$ ./1-last_digit.py
+            Last digit of -9200 is 0 and is 0
+            guillaume@ubuntu:~/0x01$ ./1-last_digit.py
+            Last digit of 5247 is 7 and is greater than 5
+            guillaume@ubuntu:~/0x01$ ./1-last_digit.py
+            Last digit of -9318 is -8 and is less than 6 and not 0
+            guillaume@ubuntu:~/0x01$ ./1-last_digit.py
+            Last digit of 3369 is 9 and is greater than 5
+            guillaume@ubuntu:~/0x01$ ./1-last_digit.py
+            Last digit of -5224 is -4 and is less than 6 and not 0
+            guillaume@ubuntu:~/0x01$ ./1-last_digit.py
+            Last digit of -4485 is -5 and is less than 6 and not 0
+            guillaume@ubuntu:~/0x01$ ./1-last_digit.py
+            Last digit of 3850 is 0 and is 0
+            guillaume@ubuntu:~/0x01$ ./1-last_digit.py
+            Last digit of 5169 is 9 and is greater than 5
+            guillaume@ubuntu:~/0x01$
+
+            ```
+
+            **Repo:**
+
+            -   GitHub repository: `alx-higher_level_programming`
+            -   Directory: `0x01-python-if_else_loops_functions`
+            -   File: `1-last_digit.py`   
+
+    rubric: |
+
+            Has something interesting to say.        
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+          Tasks
+            -----
+          ### 2\. How to make a script dynamic!
+
+          mandatory
+
+          Write a program that prints the number of and the list of its arguments.
+
+          -   The output should be:
+              -   Number of argument(s) followed by `argument` (if number is one) or `arguments` (otherwise), followed by
+              -   `:` (or `.` if no arguments were passed) followed by
+              -   a new line, followed by (if at least one argument),
+              -   one line per argument:
+                  -   the position of the argument (starting at `1`) followed by `:`, followed by the argument value and a new line
+          -   Your code should not be executed when imported
+          -   The number of elements of `argv` can be retrieved by using: `len(argv)`
+          -   You do not have to fully understand lists yet, but imagine that `argv` can be used just like a C array: you can use an index to walk through it. There are other ways (which will be preferred for future project tasks), if you know them you can use them.
+
+          ```
+          guillaume@ubuntu:~/0x02$ ./2-args.py
+          0 arguments.
+          guillaume@ubuntu:~/0x02$ ./2-args.py Hello
+          1 argument:
+          1: Hello
+          guillaume@ubuntu:~/0x02$ ./2-args.py Hello Welcome To The Best School
+          6 arguments:
+          1: Hello
+          2: Welcome
+          3: To
+          4: The
+          5: Best
+          6: School
+          guillaume@ubuntu:~/0x02$
+
+          ```
+
+          **Repo:**
+
+          -   GitHub repository: `alx-higher_level_programming`
+          -   Directory: `0x02-python-import_modules`
+          -   File: `2-args.py`
+
+    rubric: |
+
+            Has something interesting to say.     
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext3
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+          Tasks
+          -----
+          ### 3\. Infinite addition
+
+          mandatory
+
+          Write a program that prints the result of the addition of all arguments
+
+          -   The output should be the result of the addition of all arguments, followed by a new line
+          -   You can cast arguments into integers by using `int()` (you can assume that all arguments can be casted into integers)
+          -   Your code should not be executed when imported
+
+          ```
+          guillaume@ubuntu:~/0x02$ ./3-infinite_add.py
+          0
+          guillaume@ubuntu:~/0x02$ ./3-infinite_add.py 79 10
+          89
+          guillaume@ubuntu:~/0x02$ ./3-infinite_add.py 79 10 -40 -300 89
+          -162
+          guillaume@ubuntu:~/0x02$
+
+          ```
+
+          Last but not least, your program should also handle big numbers. And the good news is: if your program works for the above example, it will work for the following example:
+
+          ```
+          guillaume@ubuntu:~/0x02$ ./3-infinite_add.py 1111111111111111111111111111111111111111111111111111111111112222222222222222222222222222222222223435467866765443534434222222254444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555666666666666666666666666666666777777777777777777777777777777888888888888888888888888888888899999999999999999999999990000000000000000000 11111111111111111111111111111111111111111111111111222222222222222222222222222333333333333333333334567788888899999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+          11111111111111111111111111111111111111111111111111222222222222222222222222222333333333333333333334568900000011111111111111111111111111111111111111111111111111112222222222222222222222222222222222223435467866765443534434222222254444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555666666666666666666666666666666777777777777777777777777777777888888888888888888888888888888899999999999999999999999989999999999999999999
+          guillaume@ubuntu:~/0x02$
+
+          ```
+
+          Remember how you did (or did not) do it in C? `#pythoniscool`
+
+          ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/621c6dd72e1acff708141f3fab6dfa6ff37c5ee6.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20211118%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20211118T160935Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=e37063f357768ba4756a7cfd2a7d2e3cc493739a75deddf94fa8e629583245c1)
+
+          **Repo:**
+
+          -   GitHub repository: `alx-higher_level_programming`
+          -   Directory: `0x02-python-import_modules`
+          -   File: `3-infinite_add.py`
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext4
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+          Tasks
+          -----
+          ### 4\. Who are you?
+
+          mandatory
+
+          Write a program that prints all the names defined by the compiled module [hidden_4.pyc](https://github.com/holbertonschool/0x02.py/raw/master/hidden_4.pyc "hidden_4.pyc") (please download it locally).
+
+          -   You should print one name per line, in alpha order
+          -   You should print only names that do **not** start with `__`
+          -   Your code should not be executed when imported
+          -   Make sure you are running your code in Python3.8.x (`hidden_4.pyc` has been compiled with this version)
+
+          ```
+          guillaume@ubuntu:~/0x02$ curl -Lso "hidden_4.pyc" "https://github.com/holbertonschool/0x02.py/raw/master/hidden_4.pyc"
+          guillaume@ubuntu:~/0x02$ ./4-hidden_discovery.py | sort
+          my_secret_santa
+          print_hidden
+          print_school
+          guillaume@ubuntu:~/0x02$
+
+          ```
+
+          **Repo:**
+
+          -   GitHub repository: `alx-higher_level_programming`
+          -   Directory: `0x02-python-import_modules`
+          -   File: `4-hidden_discovery.py`
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext5
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+          Tasks
+          -----
+          ### 5\. Everything can be imported
+
+          mandatory
+
+          Write a program that imports the variable `a` from the file `variable_load_5.py` and prints its value.
+
+          -   You are not allowed to use `*` for importing or `__import__`
+          -   Your code should not be executed when imported
+
+          ```
+          guillaume@ubuntu:~/0x02$ cat variable_load_5.py
+          #!/usr/bin/python3
+          a = 98
+          """Simple variable
+          """
+
+          guillaume@ubuntu:~/0x02$ ./5-variable_load.py
+          98
+          guillaume@ubuntu:~/0x02$
+
+          ```
+
+          **Repo:**
+
+          -   GitHub repository: `alx-higher_level_programming`
+          -   Directory: `0x02-python-import_modules`
+          -   File: `5-variable_load.py`
+
+
+completion_text: |
+
+        You have successfully completed the test exam!
