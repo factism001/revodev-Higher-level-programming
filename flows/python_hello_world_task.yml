@@ -48,7 +48,7 @@ rules:
         credit_percent: 65
 
     -
-        credit_percent: 0
+        credit_percent: 50
 
 pages:
 
@@ -97,7 +97,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
-    id: hgtext2
+    id: hgtext1
     access_rules:
         add_permissions:
             - change_answer
@@ -138,7 +138,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
-    id: hgtext3
+    id: hgtext2
     access_rules:
         add_permissions:
             - change_answer
@@ -178,7 +178,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
-    id: hgtext4
+    id: hgtext3
     access_rules:
         add_permissions:
             - change_answer
@@ -226,7 +226,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
-    id: hgtext5
+    id: hgtext4
     access_rules:
         add_permissions:
             - change_answer
@@ -271,7 +271,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
-    id: hgtext6
+    id: hgtext5
     access_rules:
         add_permissions:
             - change_answer
@@ -319,7 +319,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
-    id: hgtext7
+    id: hgtext6
     access_rules:
         add_permissions:
             - change_answer
@@ -363,7 +363,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
-    id: hgtext8
+    id: hgtext7
     access_rules:
         add_permissions:
             - change_answer
@@ -412,7 +412,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
-    id: hgtext9
+    id: hgtext8
     access_rules:
         add_permissions:
             - change_answer
@@ -457,7 +457,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
-    id: hgtext10
+    id: hgtext9
     access_rules:
         add_permissions:
             - change_answer
@@ -516,7 +516,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
-    id: hgtext11
+    id: hgtext10
     access_rules:
         add_permissions:
             - change_answer
