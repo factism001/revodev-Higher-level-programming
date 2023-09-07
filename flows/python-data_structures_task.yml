@@ -33,7 +33,9 @@ rules:
     - if_completed_before: end_week 2
       credit_percent: 65
     - credit_percent: 0
+
 pages:
+  
   - type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext
     access_rules:
@@ -86,6 +88,7 @@ pages:
     rubric: |
       
       Has something interesting to say.    
+  
   - type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext1
     access_rules:
