@@ -1,7 +1,6 @@
 title: RELATE Test Quiz
 description: |
-  
-  # RELATE Test Quiz
+    # RELATE Test Quiz
 rules:
   start:
     - if_after: 2015-03-06 23:59:00
