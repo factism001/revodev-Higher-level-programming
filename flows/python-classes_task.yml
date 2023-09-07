@@ -578,9 +578,9 @@ pages:
         -   File: `6-square.py`
     rubric: |
 
-            Has something interesting to say.
+        Has something interesting to say.
 
 
 completion_text: |
 
-        You have successfully completed the test exam!
+    You have successfully completed the test exam!
