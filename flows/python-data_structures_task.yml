@@ -35,7 +35,7 @@ rules:
       credit_percent: 65
     - credit_percent: 0
 pages:
-  - type: PythonclearCodeQuestionWithHumanTextFeedback
+  - type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext
     access_rules:
       add_permissions:
