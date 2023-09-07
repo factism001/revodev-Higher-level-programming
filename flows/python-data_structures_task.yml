@@ -36,7 +36,8 @@ rules:
 
 pages:
   
-  - type: PythonCodeQuestionWithHumanTextFeedback
+- 
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext
     access_rules:
       add_permissions:
@@ -89,7 +90,8 @@ pages:
       
       Has something interesting to say.    
   
-  - type: PythonCodeQuestionWithHumanTextFeedback
+- 
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext1
     access_rules:
       add_permissions:
