@@ -54,6 +54,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext
     access_rules:
         add_permissions:
@@ -119,6 +120,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext1
     access_rules:
         add_permissions:
@@ -188,6 +190,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext2
     access_rules:
         add_permissions:
@@ -246,6 +249,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext3
     access_rules:
         add_permissions:
@@ -304,6 +308,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext4
     access_rules:
         add_permissions:
@@ -349,6 +354,7 @@ pages:
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext5
     access_rules:
         add_permissions:
