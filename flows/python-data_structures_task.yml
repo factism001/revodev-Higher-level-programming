@@ -137,7 +137,9 @@ pages:
     rubric: |
       
       Has something interesting to say.        
-  - type: PythonCodeQuestionWithHumanTextFeedback
+- 
+
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext2
     access_rules:
       add_permissions:
@@ -189,7 +191,9 @@ pages:
     rubric: |
       
       Has something interesting to say.     
-  - type: PythonCodeQuestionWithHumanTextFeedback
+- 
+
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext3
     access_rules:
       add_permissions:
@@ -237,7 +241,9 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `3-print_reversed_list_integer.py`
-  - type: PythonCodeQuestionWithHumanTextFeedback
+-
+
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext4
     access_rules:
       add_permissions:
@@ -286,7 +292,9 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `4-new_in_list.py`
-  - type: PythonCodeQuestionWithHumanTextFeedback
+-
+
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext5
     access_rules:
       add_permissions:
@@ -331,7 +339,9 @@ pages:
       -   GitHub repository: `alx-higher_level_programming`
       -   Directory: `0x03-python-data_structures`
       -   File: `5-no_c.py`
-  - type: PythonCodeQuestionWithHumanTextFeedback
+-
+
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext6
     access_rules:
       add_permissions:
@@ -386,7 +396,9 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `6-print_matrix_integer.py`
-  - type: PythonCodeQuestionWithHumanTextFeedback
+-
+
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext7
     access_rules:
       add_permissions:
@@ -439,7 +451,9 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `7-add_tuple.py`
-  - type: PythonCodeQuestionWithHumanTextFeedback
+-
+
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext8
     access_rules:
       add_permissions:
@@ -481,7 +495,9 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `8-multiple_returns.py`
-  - type: PythonCodeQuestionWithHumanTextFeedback
+-
+
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext9
     access_rules:
       add_permissions:
@@ -525,7 +541,9 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `9-max_integer.py`
-  - type: PythonCodeQuestionWithHumanTextFeedback
+-
+
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext10
     access_rules:
       add_permissions:
@@ -608,7 +626,9 @@ pages:
       -   Directory: `0x03-python-data_structures`
 
       -   File: `10-divisible_by_2.py`
-  - type: PythonCodeQuestionWithHumanTextFeedback
+-
+
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext11
     access_rules:
       add_permissions:
@@ -654,7 +674,9 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `11-delete_at.py`
-  - type: PythonCodeQuestionWithHumanTextFeedback
+-
+
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext12
     access_rules:
       add_permissions:
