@@ -108,7 +108,8 @@ pages:
   
 - 
     type: PythonCodeQuestionWithHumanTextFeedback
-    id: hgtext12222
+    title: "RELATE Test Quiz"
+    id: hgtext1
     access_rules:
         add_permissions:
             - change_answer
