@@ -117,7 +117,8 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-      Tasks
+    
+        Tasks
         -----
           ### 1\. Secure access to an element in a list
 
@@ -166,7 +167,8 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-      Tasks
+    
+        Tasks
           -----
         ### 2\. Replace element
 
