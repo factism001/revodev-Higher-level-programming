@@ -108,7 +108,7 @@ pages:
   
 - 
     type: PythonCodeQuestionWithHumanTextFeedback
-    id: hgtext1
+    id: hgtext12222
     access_rules:
         add_permissions:
             - change_answer
