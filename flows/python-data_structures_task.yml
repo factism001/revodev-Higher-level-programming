@@ -159,6 +159,7 @@ pages:
 - 
 
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext2
     access_rules:
         add_permissions:
