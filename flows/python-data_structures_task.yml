@@ -771,6 +771,11 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `12-switch.py`
+    rubric: |
+      
+      Has something interesting to say.
+
+
 completion_text: |
 
     You have successfully completed the test exam!
