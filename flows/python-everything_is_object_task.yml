@@ -478,7 +478,7 @@ pages:
             Has something interesting to say.
 
 -
-    type: PythonclearCodeQuestionWithHumanTextFeedback
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext11
     access_rules:
         add_permissions:
@@ -953,7 +953,7 @@ pages:
             Has something interesting to say.
 
 -
-    type: PythonclearCodeQuestionWithHumanTextFeedback
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext22
     access_rules:
         add_permissions:
@@ -1448,7 +1448,7 @@ pages:
             Has something interesting to say.
 
 -
-    type: PythonclearCodeQuestionWithHumanTextFeedback
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext33
     access_rules:
         add_permissions:
