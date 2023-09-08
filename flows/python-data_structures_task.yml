@@ -261,6 +261,9 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `3-print_reversed_list_integer.py`
+    rubric: |
+      
+      Has something interesting to say.
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
@@ -312,6 +315,10 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `4-new_in_list.py`
+    rubric: |
+      
+      Has something interesting to say.
+    
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
@@ -359,6 +366,9 @@ pages:
       -   GitHub repository: `alx-higher_level_programming`
       -   Directory: `0x03-python-data_structures`
       -   File: `5-no_c.py`
+    rubric: |
+      
+      Has something interesting to say.
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
@@ -416,6 +426,9 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `6-print_matrix_integer.py`
+    rubric: |
+      
+      Has something interesting to say.
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
@@ -471,6 +484,9 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `7-add_tuple.py`
+    rubric: |
+      
+      Has something interesting to say.
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
@@ -515,6 +531,9 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `8-multiple_returns.py`
+    rubric: |
+      
+      Has something interesting to say.
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
@@ -561,6 +580,9 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `9-max_integer.py`
+    rubric: |
+      
+      Has something interesting to say.
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
@@ -646,6 +668,9 @@ pages:
       -   Directory: `0x03-python-data_structures`
 
       -   File: `10-divisible_by_2.py`
+    rubric: |
+      
+      Has something interesting to say.
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
@@ -694,6 +719,9 @@ pages:
         -   GitHub repository: `alx-higher_level_programming`
         -   Directory: `0x03-python-data_structures`
         -   File: `11-delete_at.py`
+    rubric: |
+      
+      Has something interesting to say.
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
