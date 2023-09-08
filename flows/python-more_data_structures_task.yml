@@ -35,7 +35,7 @@ rules:
     # Record grades under the machine-readable name 'test_quiz'.
     # If there is more than one grade, use the maximum.
 
-    grade_identifier: test_quiz
+    grade_identifier: more_data_structure_quiz
     grade_aggregation_strategy: max_grade
 
     grading:
@@ -53,7 +53,7 @@ rules:
 pages:
 
 -
-    type: PythonclearCodeQuestionWithHumanTextFeedback
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext
     access_rules:
         add_permissions:
@@ -121,9 +121,9 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-            
-          Tasks
-          -----
+    
+        Tasks
+        -----
             
           1\. Search and replace\
           mandatory
@@ -655,13 +655,13 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
-            Tasks
-            -----
-          11\. Multiply by using map\
+    
+        Tasks
+        -----
+        11\. Multiply by using map\
           mandatory
 
-          Write a function that returns a list with all values multiplied by a number without using any loops.
+        Write a function that returns a list with all values multiplied by a number without using any loops.
 
               Prototype: def multiply_list_map(my_list=[], number=0):\
               Returns a new list:\
