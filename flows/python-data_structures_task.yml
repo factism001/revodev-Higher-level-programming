@@ -214,6 +214,7 @@ pages:
 - 
 
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext3
     access_rules:
         add_permissions:
@@ -267,6 +268,7 @@ pages:
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext4
     access_rules:
         add_permissions:
@@ -322,6 +324,7 @@ pages:
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext5
     access_rules:
         add_permissions:
@@ -372,6 +375,7 @@ pages:
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext6
     access_rules:
         add_permissions:
@@ -432,6 +436,7 @@ pages:
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext7
     access_rules:
         add_permissions:
@@ -490,6 +495,7 @@ pages:
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext8
     access_rules:
         add_permissions:
@@ -537,6 +543,7 @@ pages:
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext9
     access_rules:
         add_permissions:
@@ -586,6 +593,7 @@ pages:
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext10
     access_rules:
         add_permissions:
@@ -674,6 +682,7 @@ pages:
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext11
     access_rules:
         add_permissions:
@@ -725,6 +734,7 @@ pages:
 -
 
     type: PythonCodeQuestionWithHumanTextFeedback
+    title: "RELATE Test Quiz"
     id: hgtext12
     access_rules:
         add_permissions:
