@@ -116,7 +116,7 @@ pages:
     human_feedback_percentage: 100
     is_optional_page: false
     timeout: 10
-    prompt: >
+    prompt: |
       Tasks
         -----
           ### 1\. Secure access to an element in a list
@@ -165,7 +165,7 @@ pages:
     human_feedback_percentage: 100
     is_optional_page: false
     timeout: 10
-    prompt: >
+    prompt: |
       Tasks
           -----
         ### 2\. Replace element
@@ -219,7 +219,7 @@ pages:
     human_feedback_percentage: 100
     is_optional_page: false
     timeout: 10
-    prompt: >
+    prompt: |
       Tasks
         -----
         ### 3\. Print a list of integers... in reverse!
@@ -269,7 +269,7 @@ pages:
     human_feedback_percentage: 100
     is_optional_page: false
     timeout: 10
-    prompt: >
+    prompt: |
       Tasks
         -----
         ### 4\. Replace in a copy
@@ -367,7 +367,7 @@ pages:
     human_feedback_percentage: 100
     is_optional_page: false
     timeout: 10
-    prompt: >
+    prompt: |
       Tasks
         -----
         ### 6\. Lists of lists = Matrix
@@ -424,7 +424,7 @@ pages:
     human_feedback_percentage: 100
     is_optional_page: false
     timeout: 10
-    prompt: >
+    prompt: |
       Tasks
         -----
         ### 7\. Tuples addition
@@ -479,7 +479,7 @@ pages:
     human_feedback_percentage: 100
     is_optional_page: false
     timeout: 10
-    prompt: >
+    prompt: |
       Tasks
         -----
         ### 8\. More returns!
@@ -569,7 +569,7 @@ pages:
     human_feedback_percentage: 100
     is_optional_page: false
     timeout: 10
-    prompt: >
+    prompt: |
       
       Tasks
 
@@ -654,7 +654,7 @@ pages:
     human_feedback_percentage: 100
     is_optional_page: false
     timeout: 10
-    prompt: >
+    prompt: |
       Tasks
         -----
         ### 11\. Delete at
@@ -702,7 +702,7 @@ pages:
     human_feedback_percentage: 100
     is_optional_page: false
     timeout: 10
-    prompt: >
+    prompt: |
       Tasks
         -----
         ### 12\. Switch
