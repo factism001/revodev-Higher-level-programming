@@ -264,6 +264,10 @@ pages:
             -   Directory: `0x01-python-if_else_loops_functions`
             -   File: `3-print_alphabt.py`
 
+    rubric: |
+
+            Has something interesting to say.
+
 -
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext4
@@ -324,6 +328,10 @@ pages:
             -   Directory: `0x01-python-if_else_loops_functions`
             -   File: `4-print_hexa.py`
 
+    rubric: |
+
+            Has something interesting to say.
+
 -
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext5
@@ -364,6 +372,10 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x01-python-if_else_loops_functions`
             -   File: `5-print_comb2.py`
+
+    rubric: |
+
+            Has something interesting to say.
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
@@ -408,6 +420,10 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x01-python-if_else_loops_functions`
             -   File: `6-print_comb3.py`
+
+    rubric: |
+
+            Has something interesting to say.
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
@@ -465,6 +481,10 @@ pages:
             -   Directory: `0x01-python-if_else_loops_functions`
             -   File: `7-islower.py`
 
+    rubric: |
+
+            Has something interesting to say.
+
 -
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext8
@@ -515,6 +535,10 @@ pages:
             -   Directory: `0x01-python-if_else_loops_functions`
             -   File: `8-uppercase.py`
 
+    rubric: |
+
+            Has something interesting to say.
+
 -
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext9
@@ -562,6 +586,10 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x01-python-if_else_loops_functions`
             -   File: `9-print_last_digit.py`
+
+    rubric: |
+
+            Has something interesting to say.
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
@@ -611,6 +639,10 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x01-python-if_else_loops_functions`
             -   File: `10-add.py`
+
+    rubric: |
+
+            Has something interesting to say.
 
 -
     type: PythonCodeQuestionWithHumanTextFeedback
@@ -665,6 +697,10 @@ pages:
             -   Directory: `0x01-python-if_else_loops_functions`
             -   File: `11-pow.py`
 
+    rubric: |
+
+            Has something interesting to say.
+
 -
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext12
@@ -712,6 +748,10 @@ pages:
             -   GitHub repository: `alx-higher_level_programming`
             -   Directory: `0x01-python-if_else_loops_functions`
             -   File: `12-fizzbuzz.py`
+
+    rubric: |
+
+            Has something interesting to say.
 
 
 completion_text: |
