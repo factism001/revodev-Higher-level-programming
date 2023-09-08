@@ -35,7 +35,7 @@ rules:
     # Record grades under the machine-readable name 'test_quiz'.
     # If there is more than one grade, use the maximum.
 
-    grade_identifier: test_quiz
+    grade_identifier: inheritance_quiz
     grade_aggregation_strategy: max_grade
 
     grading:
@@ -53,7 +53,7 @@ rules:
 pages:
 
 -
-    type: PythonclearCodeQuestionWithHumanTextFeedback
+    type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext
     access_rules:
         add_permissions:
@@ -98,7 +98,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-            
+    
         Tasks
         -----
             
@@ -133,7 +133,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
             
@@ -172,7 +172,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
 
@@ -211,7 +211,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
 
@@ -250,7 +250,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
 
@@ -289,7 +289,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-            
+    
         Tasks
         -----
 
@@ -329,7 +329,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
 
@@ -369,7 +369,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
 
@@ -409,7 +409,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
 
@@ -449,7 +449,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
 
@@ -488,7 +488,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
 
@@ -528,7 +528,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-            
+    
         Tasks
         -----
             
@@ -568,7 +568,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
             
@@ -608,7 +608,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
 
@@ -649,7 +649,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
 
@@ -690,7 +690,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
 
@@ -733,7 +733,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-            
+    
         Tasks
         -----
 
@@ -776,7 +776,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
 
@@ -820,7 +820,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
 
@@ -887,7 +887,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-
+    
         Tasks
         -----
 
@@ -1001,7 +1001,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-            
+    
         Tasks
         -----
             
@@ -1202,7 +1202,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-            
+    
         Tasks
         -----
 
@@ -1507,7 +1507,7 @@ pages:
     is_optional_page: false
     timeout: 10
     prompt: |
-            
+    
         Tasks
         -----
             
