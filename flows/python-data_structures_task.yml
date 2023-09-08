@@ -56,8 +56,8 @@ pages:
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext
     access_rules:
-      add_permissions:
-        - change_answer
+        add_permissions:
+            - change_answer
     value: 5
     human_feedback_percentage: 100
     is_optional_page: false
@@ -110,8 +110,8 @@ pages:
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext1
     access_rules:
-      add_permissions:
-        - change_answer
+        add_permissions:
+            - change_answer
     value: 5
     human_feedback_percentage: 100
     is_optional_page: false
@@ -160,8 +160,8 @@ pages:
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext2
     access_rules:
-      add_permissions:
-        - change_answer
+        add_permissions:
+            - change_answer
     value: 5
     human_feedback_percentage: 100
     is_optional_page: false
@@ -215,8 +215,8 @@ pages:
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext3
     access_rules:
-      add_permissions:
-        - change_answer
+        add_permissions:
+            - change_answer
     value: 5
     human_feedback_percentage: 100
     is_optional_page: false
@@ -265,8 +265,8 @@ pages:
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext4
     access_rules:
-      add_permissions:
-        - change_answer
+        add_permissions:
+            - change_answer
     value: 5
     human_feedback_percentage: 100
     is_optional_page: false
@@ -316,8 +316,8 @@ pages:
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext5
     access_rules:
-      add_permissions:
-        - change_answer
+        add_permissions:
+            - change_answer
     value: 5
     human_feedback_percentage: 100
     is_optional_page: false
@@ -363,8 +363,8 @@ pages:
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext6
     access_rules:
-      add_permissions:
-        - change_answer
+        add_permissions:
+            - change_answer
     value: 5
     human_feedback_percentage: 100
     is_optional_page: false
@@ -420,8 +420,8 @@ pages:
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext7
     access_rules:
-      add_permissions:
-        - change_answer
+        add_permissions:
+            - change_answer
     value: 5
     human_feedback_percentage: 100
     is_optional_page: false
@@ -475,8 +475,8 @@ pages:
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext8
     access_rules:
-      add_permissions:
-        - change_answer
+        add_permissions:
+            - change_answer
     value: 5
     human_feedback_percentage: 100
     is_optional_page: false
@@ -519,8 +519,8 @@ pages:
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext9
     access_rules:
-      add_permissions:
-        - change_answer
+        add_permissions:
+            - change_answer
     value: 5
     human_feedback_percentage: 100
     is_optional_page: false
@@ -565,8 +565,8 @@ pages:
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext10
     access_rules:
-      add_permissions:
-        - change_answer
+        add_permissions:
+            - change_answer
     value: 5
     human_feedback_percentage: 100
     is_optional_page: false
@@ -650,8 +650,8 @@ pages:
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext11
     access_rules:
-      add_permissions:
-        - change_answer
+        add_permissions:
+            - change_answer
     value: 5
     human_feedback_percentage: 100
     is_optional_page: false
@@ -698,8 +698,8 @@ pages:
     type: PythonCodeQuestionWithHumanTextFeedback
     id: hgtext12
     access_rules:
-      add_permissions:
-        - change_answer
+        add_permissions:
+            - change_answer
     value: 5
     human_feedback_percentage: 100
     is_optional_page: false
@@ -732,5 +732,5 @@ pages:
         -   Directory: `0x03-python-data_structures`
         -   File: `12-switch.py`
 completion_text: |
-  
-  You have successfully completed the test exam!
+
+    You have successfully completed the test exam!
