@@ -1,0 +1,414 @@
+title: "RELATE Test Quiz"
+description: |
+
+    # RELATE Test Quiz
+
+rules:
+    # (Things behind '#' hash marks are comments.)
+    # Allow students to start two attempts at the quiz before the deadline.
+    # After that, only allow access to previously started quizzes.
+
+    start:
+    -
+        if_after: 2015-03-06 23:59:00
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 2
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    # Allow students to submit quiz answers before the deadline.
+    # After the deadline, the quiz becomes read-only. (The 'modify'
+    # permission goes away.)
+
+    access:
+    -
+        if_after: 2015-03-06 23:59:02
+        permissions: [view, submit_answer, end_session, see_correctness]
+
+    -
+        permissions: [view, see_correctness, see_answer_after_submission]
+
+    # Record grades under the machine-readable name 'test_quiz'.
+    # If there is more than one grade, use the maximum.
+
+    grade_identifier: hello_world_task
+    grade_aggregation_strategy: max_grade
+
+    grading:
+    -   
+        if_completed_before: end_week 1
+        credit_percent: 100
+
+    -
+        if_completed_before: end_week 2
+        credit_percent: 65
+
+    -
+        credit_percent: 50
+
+pages:
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+        Tasks
+        -----
+
+        ### 0\. cURL body size
+
+        mandatory
+
+        Score: 0.00% (Checks completed: 0.00%)
+
+        Write a Bash script that takes in a URL, sends a request to that URL, and displays the size of the body of the response
+
+        -   The size must be displayed in bytes
+        -   You have to use `curl`
+
+        Please test your script in the sandbox provided, using the web server running on port 5000
+
+        ```
+        guillaume@ubuntu:~/0x10$ ./0-body_size.sh 0.0.0.0:5000
+        10
+        guillaume@ubuntu:~/0x10$
+
+        ```
+
+        **Repo:**
+
+        -   GitHub repository: `alx-higher_level_programming`
+        -   Directory: `0x10-python-network_0`
+        -   File: `0-body_size.sh`
+
+         Done? Help Check your code Get a sandbox QA Review
+            
+    rubric: |
+
+            Has something interesting to say.
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext1
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+            
+            ### 1\. cURL to the end
+
+            mandatory
+
+            Score: 0.00% (Checks completed: 0.00%)
+
+            Write a Bash script that takes in a URL, sends a `GET` request to the URL, and displays the body of the response
+
+            -   Display only body of a `200` status code response
+            -   You have to use `curl`
+
+            Please test your script in the sandbox provided, using the web server running on port 5000
+
+            ```
+            guillaume@ubuntu:~/0x10$ ./1-body.sh 0.0.0.0:5000/route_1 ; echo ""
+            Route 2
+            guillaume@ubuntu:~/0x10$
+
+            ```
+
+            **Repo:**
+
+            -   GitHub repository: `alx-higher_level_programming`
+            -   Directory: `0x10-python-network_0`
+            -   File: `1-body.sh`
+
+             Done? Help Check your code Get a sandbox QA Review
+
+    rubric: |
+            
+            Has something interesting to say.
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+            Tasks
+            -----
+            
+            ### 2\. cURL Method
+
+            mandatory
+
+            Score: 0.00% (Checks completed: 0.00%)
+
+            Write a Bash script that sends a `DELETE` request to the URL passed as the first argument and displays the body of the response
+
+            -   You have to use `curl`
+
+            Please test your script in the sandbox provided, using the web server running on port 5000
+
+            ```
+            guillaume@ubuntu:~/0x10$ ./2-delete.sh 0.0.0.0:5000/route_3 ; echo ""
+            I'm a DELETE request
+            guillaume@ubuntu:~/0x10$
+
+            ```
+
+            **Repo:**
+
+            -   GitHub repository: `alx-higher_level_programming`
+            -   Directory: `0x10-python-network_0`
+            -   File: `2-delete.sh`
+
+             Done? Help Check your code Get a sandbox QA Review
+
+    rubric: |
+
+            Has something interesting to say.
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext3
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+            Tasks
+            -----
+
+            ### 3\. cURL only methods
+
+            mandatory
+
+            Score: 0.00% (Checks completed: 0.00%)
+
+            Write a Bash script that takes in a URL and displays all HTTP methods the server will accept.
+
+            -   You have to use `curl`
+
+            Please test your script in the sandbox provided, using the web server running on port 5000
+
+            ```
+            guillaume@ubuntu:~/0x10$ ./3-methods.sh 0.0.0.0:5000/route_4
+            OPTIONS, HEAD, PUT
+            guillaume@ubuntu:~/0x10$
+
+            ```
+
+            **Repo:**
+
+            -   GitHub repository: `alx-higher_level_programming`
+            -   Directory: `0x10-python-network_0`
+            -   File: `3-methods.sh`
+
+             Done? Help Check your code Get a sandbox QA Review
+
+    rubric: |
+
+            Has something interesting to say.
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext4
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+            Tasks
+            -----
+
+            ### 4\. cURL headers
+
+            mandatory
+
+            Score: 0.00% (Checks completed: 0.00%)
+
+            Write a Bash script that takes in a URL as an argument, sends a `GET` request to the URL, and displays the body of the response
+
+            -   A header variable `X-School-User-Id` must be sent with the value `98`
+            -   You have to use `curl`
+
+            Please test your script in the sandbox provided, using the web server running on port 5000
+
+            ```
+            guillaume@ubuntu:~/0x10$ ./4-header.sh 0.0.0.0:5000/route_5 ; echo ""
+            Hello School!
+            guillaume@ubuntu:~/0x10$
+
+            ```
+
+            **Repo:**
+
+            -   GitHub repository: `alx-higher_level_programming`
+            -   Directory: `0x10-python-network_0`
+            -   File: `4-header.sh`
+
+             Done? Help Check your code Get a sandbox QA Review
+
+    rubric: |
+
+            Has something interesting to say.
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext5
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+            Tasks
+            -----
+
+            ### 5\. cURL POST parameters
+
+            mandatory
+
+            Score: 0.00% (Checks completed: 0.00%)
+
+            Write a Bash script that takes in a URL, sends a `POST` request to the passed URL, and displays the body of the response
+
+            -   A variable `email` must be sent with the value `test@gmail.com`
+            -   A variable `subject` must be sent with the value `I will always be here for PLD`
+            -   You have to use `curl`
+
+            Please test your script in the sandbox provided, using the web server running on port 5000
+
+            ```
+            guillaume@ubuntu:~/0x10$ ./5-post_params.sh 0.0.0.0:5000/route_6 ; echo ""
+            POST params:
+                email: test@gmail.com
+                subject: I will always be here for PLD
+            guillaume@ubuntu:~/0x10$
+
+            ```
+
+            **Repo:**
+
+            -   GitHub repository: `alx-higher_level_programming`
+            -   Directory: `0x10-python-network_0`
+            -   File: `5-post_params.sh`
+
+             Done? Help Check your code Get a sandbox QA Review
+
+        
+    rubric: |
+
+            Has something interesting to say.
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext6
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            Tasks
+            -----
+
+            ### 6\. Find a peak
+
+            mandatory
+
+            Score: 0.00% (Checks completed: 0.00%)
+
+            **Technical interview preparation**:
+
+            -   You are not allowed to google anything
+            -   Whiteboard first
+
+            Write a function that finds **a peak** in a list of unsorted integers.
+
+            -   Prototype: `def find_peak(list_of_integers):`
+            -   You are not allowed to import any module
+            -   Your algorithm must have the lowest complexity (*hint: you don't need to go through all numbers to find a peak*)
+            -   `6-peak.py` must contain the function
+            -   `6-peak.txt` must contain the complexity of your algorithm: `O(log(n))`, `O(n)`, `O(nlog(n))` or `O(n2)`
+            -   **Note**: there may be more than one peak in the list
+
+            ```
+            guillaume@ubuntu:~/0x10$ cat 6-main.py
+            #!/usr/bin/python3
+            """ Test function find_peak """
+            find_peak = __import__('6-peak').find_peak
+
+            print(find_peak([1, 2, 4, 6, 3]))
+            print(find_peak([4, 2, 1, 2, 3, 1]))
+            print(find_peak([2, 2, 2]))
+            print(find_peak([]))
+            print(find_peak([-2, -4, 2, 1]))
+            print(find_peak([4, 2, 1, 2, 2, 2, 3, 1]))
+
+            guillaume@ubuntu:~/0x10$ ./6-main.py
+            6
+            3
+            2
+            None
+            2
+            4
+            guillaume@ubuntu:~/0x10$ wc -l 6-peak.txt
+            2 6-peak.txt
+            guillaume@ubuntu:~/0x10$
+
+            ```
+
+            **Repo:**
+
+            -   GitHub repository: `alx-higher_level_programming`
+            -   Directory: `0x10-python-network_0`
+            -   File: `6-peak.py, 6-peak.txt`
+    
+    rubric: |
+
+            Has something interesting to say.
+
+
+
+
+completion_text: |
+
+        You have successfully completed the test exam!

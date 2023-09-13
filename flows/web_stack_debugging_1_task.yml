@@ -1,0 +1,219 @@
+title: "RELATE Test Quiz"
+description: |
+
+    # RELATE Test Quiz
+
+rules:
+    # (Things behind '#' hash marks are comments.)
+    # Allow students to start two attempts at the quiz before the deadline.
+    # After that, only allow access to previously started quizzes.
+
+    start:
+    -
+        if_after: 2015-03-06 23:59:00
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 2
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    # Allow students to submit quiz answers before the deadline.
+    # After the deadline, the quiz becomes read-only. (The 'modify'
+    # permission goes away.)
+
+    access:
+    -
+        if_after: 2015-03-06 23:59:02
+        permissions: [view, submit_answer, end_session, see_correctness]
+
+    -
+        permissions: [view, see_correctness, see_answer_after_submission]
+
+    # Record grades under the machine-readable name 'test_quiz'.
+    # If there is more than one grade, use the maximum.
+
+    grade_identifier: hello_world_task
+    grade_aggregation_strategy: max_grade
+
+    grading:
+    -   
+        if_completed_before: end_week 1
+        credit_percent: 100
+
+    -
+        if_completed_before: end_week 2
+        credit_percent: 65
+
+    -
+        credit_percent: 50
+
+pages:
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+        Tasks
+        -----
+
+        ### 0\. Nginx likes port 80
+
+        mandatory
+
+        Score: 0.00% (Checks completed: 0.00%)
+
+        Using your debugging skills, find out what's keeping your Ubuntu container's Nginx installation from listening on port `80`. Feel free to install whatever tool you need, start and destroy as many containers as you need to debug the issue. Then, write a Bash script with the minimum number of commands to automate your fix.
+
+        Requirements:
+
+        -   Nginx must be running, and listening on port `80` of all the server's active IPv4 IPs
+        -   Write a Bash script that configures a server to the above requirements
+
+        ```
+        root@966c5664b21f:/# curl 0:80
+        curl: (7) Failed to connect to 0 port 80: Connection refused
+        root@966c5664b21f:/#
+        root@966c5664b21f:/# ./0-nginx_likes_port_80 > /dev/null 2&>1
+        root@966c5664b21f:/#
+        root@966c5664b21f:/# curl 0:80
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <title>Welcome to nginx!</title>
+        <style>
+            body {
+                width: 35em;
+                margin: 0 auto;
+                font-family: Tahoma, Verdana, Arial, sans-serif;
+            }
+        </style>
+        </head>
+        <body>
+        <h1>Welcome to nginx!</h1>
+        <p>If you see this page, the nginx web server is successfully installed and
+        working. Further configuration is required.</p>
+
+        <p>For online documentation and support please refer to
+        <a href="http://nginx.org/">nginx.org</a>.<br/>
+        Commercial support is available at
+        <a href="http://nginx.com/">nginx.com</a>.</p>
+
+        <p><em>Thank you for using nginx.</em></p>
+        </body>
+        </html>
+        root@966c5664b21f:/#
+
+        ```
+
+        **Repo:**
+
+        -   GitHub repository: `alx-system_engineering-devops`
+        -   Directory: `0x0E-web_stack_debugging_1`
+        -   File: `0-nginx_likes_port_80`
+
+         Done? Help Check your code Ask for a new correction Get a sandbox QA Review
+            
+    rubric: |
+
+            Has something interesting to say.
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext1
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+            
+            ### 1\. Make it sweet and short
+
+            #advanced
+
+            Score: 0.00% (Checks completed: 0.00%)
+
+            Using what you did for task #0, make your fix short and sweet.
+
+            Requirements:
+
+            -   Your Bash script must be 5 lines long or less
+            -   There must be a new line at the end of the file
+            -   You must respect usual Bash script requirements
+            -   You cannot use `;`
+            -   You cannot use `&&`
+            -   You cannot use `wget`
+            -   You cannot execute your previous answer file (Do not include the name of the previous script in this one)
+            -   `service` (init) must say that `nginx` is not running ← for real
+
+            ```
+            root@966c5664b21f:/# curl 0:80
+            curl: (7) Failed to connect to 0 port 80: Connection refused
+            root@966c5664b21f:/#
+            root@966c5664b21f:/# cat -e 1-debugging_made_short | wc -l
+            5
+            root@966c5664b21f:/# ./1-debugging_made_short
+            root@966c5664b21f:/# curl 0:80
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <title>Welcome to nginx!</title>
+            <style>
+                body {
+                    width: 35em;
+                    margin: 0 auto;
+                    font-family: Tahoma, Verdana, Arial, sans-serif;
+                }
+            </style>
+            </head>
+            <body>
+            <h1>Welcome to nginx!</h1>
+            <p>If you see this page, the nginx web server is successfully installed and
+            working. Further configuration is required.</p>
+
+            <p>For online documentation and support please refer to
+            <a href="http://nginx.org/">nginx.org</a>.<br/>
+            Commercial support is available at
+            <a href="http://nginx.com/">nginx.com</a>.</p>
+
+            <p><em>Thank you for using nginx.</em></p>
+            </body>
+            </html>
+            root@966c5664b21f:/#
+            root@966c5664b21f:/# service nginx status
+            * nginx is not running
+            root@966c5664b21f:/#
+
+            ```
+
+            **Repo:**
+
+            -   GitHub repository: `alx-system_engineering-devops`
+            -   Directory: `0x0E-web_stack_debugging_1`
+            -   File: `1-debugging_made_short`
+
+    rubric: |
+            
+            Has something interesting to say.
+
+
+
+completion_text: |
+
+        You have successfully completed the test exam!
