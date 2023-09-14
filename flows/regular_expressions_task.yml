@@ -35,7 +35,7 @@ rules:
     # Record grades under the machine-readable name 'test_quiz'.
     # If there is more than one grade, use the maximum.
 
-    grade_identifier: hello_world_task
+    grade_identifier: regular_expressions_task
     grade_aggregation_strategy: max_grade
 
     grading:
