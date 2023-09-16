@@ -1,0 +1,145 @@
+title: "RELATE Test Quiz"
+description: |
+
+    # RELATE Test Quiz
+
+rules:
+    # (Things behind '#' hash marks are comments.)
+    # Allow students to start two attempts at the quiz before the deadline.
+    # After that, only allow access to previously started quizzes.
+
+    start:
+    -
+        if_after: 2015-03-06 23:59:00
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 2
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    # Allow students to submit quiz answers before the deadline.
+    # After the deadline, the quiz becomes read-only. (The 'modify'
+    # permission goes away.)
+
+    access:
+    -
+        if_after: 2015-03-06 23:59:02
+        permissions: [view, submit_answer, end_session, see_correctness]
+
+    -
+        permissions: [view, see_correctness, see_answer_after_submission]
+
+    # Record grades under the machine-readable name 'test_quiz'.
+    # If there is more than one grade, use the maximum.
+
+    grade_identifier: vagrant_task
+    grade_aggregation_strategy: max_grade
+
+    grading:
+    -   
+        if_completed_before: end_week 1
+        credit_percent: 100
+
+    -
+        if_completed_before: end_week 2
+        credit_percent: 65
+
+    -
+        credit_percent: 50
+
+pages:
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+        Tasks
+        -----
+
+        ### 0\. Create and setup your Git and GitHub account
+
+        mandatory
+
+        You will need Git for this project, you might have to [install it ](https://intranet.alxswe.com/rltoken/4m4Lw9rUZFhQig7NZUF80w "install it ") on your computer if it’s not done yet.
+            Configure your basic info (name, email) on your local machine – they will be part of your commits. [Tips](https://intranet.alxswe.com/rltoken/4m4Lw9rUZFhQig7NZUF80w "Tips ")
+
+        On [GitHub.com ](https://intranet.alxswe.com/rltoken/4m4Lw9rUZFhQig7NZUF80w "GitHub.com ")-
+            -   Using the graphic interface on the website, create the repository (if it’s not done yet)
+                    -   *Description:* This is my first repository as a full-stack engineer
+                    -   *Public repo:* zero_day
+                    -   No README, .gitignore, or license
+
+        On your computer, open a terminal and do the following - 
+            -   Navigate to your home directory. 
+            -   Create a directory zero_day. Tips
+            -   Navigate to this new directory. Tips
+            -   Initialize git and add the remote origin
+            -   Create a file README.md with Emacs (or other command line editors) and write a small Markdown text to present this project. This file is mandatory in projects
+            -   Add this new file to git, commit the change with this message “My first commit” and push to the remote server / origin (Note: You will probably need to set your login/password to push to the remote server)
+
+        Good job!
+        
+        You pushed your first file in your first repository of the first task of your first School project.
+
+        
+        
+            **Repo:**
+
+            -   GitHub repository: `zero_day`
+            -   File: `README.md`
+                 
+    rubric: |
+
+            Has something interesting to say.
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext1
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+            
+            ### 1\. Hello Ubuntu
+
+            mandatory
+
+            Inside the zero_day repo, create a new directory called 0x00-vagrant. Add a README.md file to this directory.
+            ssh into your Ubuntu VM. What does the command uname print when you run it without any option?
+            Type your answer into a file in the 0x00-vagrant directory and push it to GitHub. Name your file accordingly as shown below.
+
+            **Repo:**
+
+            -   GitHub repository: `zero_day`
+            -   Directory: `0x00-vagrant`
+            -   File: `0-hello_ubuntu`
+
+             Done? Help
+
+    rubric: |
+            
+            Has something interesting to say.
+
+
+
+completion_text: |
+
+        You have successfully completed the test exam!

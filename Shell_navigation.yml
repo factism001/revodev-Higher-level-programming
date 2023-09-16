@@ -1,0 +1,101 @@
+chunks:
+
+-
+    title: "Python Hello World"
+    id: welcome
+    rules:
+    -   if_before: end_week 3
+        weight: 100
+
+    -   weight: 0
+
+    content: |
+
+            # Welcome to the course!
+
+            Please take our introductory [quiz](flow:quiz-test).
+            Or via here <a href="flow:quiz-test" role="button" class="btn btn-primary">Bootstrap button</a>.
+            # Hi there!
+
+            0x00. Shell, navigation
+            =======================
+
+            # Welcome to the Matrix!
+
+            ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2021/2/cdc24ca146228a91564ccd17686cf1d13764896e.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230916%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230916T093556Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=f68c95701051190f97e6c98c866b75a230fcd6e04500629b845ee4a21caa91b3)
+
+            -   This project will (probably) be your first experience with an Unix terminal!
+            -   For this project, please start and connect to your Sandbox 'Ubuntu 20.04'.
+
+            
+            Resources
+            ---------
+
+            **Read or watch**:
+
+            -   [Linux navigation](https://intranet.alxswe.com/rltoken/4m4Lw9rUZFhQig7NZUF80w "Linux navigation")
+            -   [Linux - looking around](https://alx-intranet.hbtn.io/rltoken/kifRlLG2iMX5AZiW8lrCMg "Linux - looking around")
+            -   [Linux - manipulating files](https://alx-intranet.hbtn.io/rltoken/RVpfAuagCo9SdfYeoHd6jg "Linux - manipulating files")
+
+            **Or in your terminal**:
+
+            -   'man pwd'
+            -   'man ls
+            -   'man cd'
+            -   'man less'
+            -   'man touch'
+            -   'man cp'
+            -   'man mv'
+            -   'man rm'
+            -   'man mkdir'
+            -   'man rmdir'
+            
+
+            Learning Objectives
+            -------------------
+
+            At the end of this project, you are expected to be able to [explain to anyone](https://alx-intranet.hbtn.io/rltoken/TYWTMEj3W1HhTHqMKu8kWA "explain to anyone"), **without the help of Google**:
+
+            ### General
+
+            -   How to navigate in an Unix system
+            -   How to list files and directories
+            -   How to display the content of a file
+            -   How to create a file or directory
+            -   How to remove a file or directory
+            -   How to move or copy a file or directory
+
+            ### Copyright - Plagiarism
+
+            -   You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
+            -   You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
+            -   You are not allowed to publish any content of this project.
+            -   Any form of plagiarism is strictly forbidden and will result in removal from the program.
+
+            Requirements
+            ------------
+
+            
+            -   All tasks must be done inside the sandbox Ubuntu 20.04
+            -   Your sandbox must be available at the end of this project - the Checker will access to it at midnight for running the correction!
+            -   It’s recommended to start the project on a fresh new Sandbox
+
+
+-
+    title: "Python hello tas pointer"
+
+    id: tas pointer
+    rules:
+    -
+        if_after: 2022-06-01
+        weight: 200
+
+    -
+        shown: True
+        weight: 0
+
+    content: |
+
+        # Welcome to the computer-based testing facility!
+
+        <a href="flow:Shell_navigation_task" class="btn btn-secondary">Start tas &raquo;</a>
