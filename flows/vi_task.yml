@@ -1,0 +1,308 @@
+title: "RELATE Test Quiz"
+description: |
+
+    # RELATE Test Quiz
+
+rules:
+    # (Things behind '#' hash marks are comments.)
+    # Allow students to start two attempts at the quiz before the deadline.
+    # After that, only allow access to previously started quizzes.
+
+    start:
+    -
+        if_after: 2015-03-06 23:59:00
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 2
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    # Allow students to submit quiz answers before the deadline.
+    # After the deadline, the quiz becomes read-only. (The 'modify'
+    # permission goes away.)
+
+    access:
+    -
+        if_after: 2015-03-06 23:59:02
+        permissions: [view, submit_answer, end_session, see_correctness]
+
+    -
+        permissions: [view, see_correctness, see_answer_after_submission]
+
+    # Record grades under the machine-readable name 'test_quiz'.
+    # If there is more than one grade, use the maximum.
+
+    grade_identifier: vi_task
+    grade_aggregation_strategy: max_grade
+
+    grading:
+    -   
+        if_completed_before: end_week 1
+        credit_percent: 100
+
+    -
+        if_completed_before: end_week 2
+        credit_percent: 65
+
+    -
+        credit_percent: 50
+
+pages:
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+        Tasks
+        -----
+
+        ### 0\. Create your answer directory
+
+        mandatory
+
+        Score: 100.0% (Checks completed: 100.0%)
+
+        Navigate to `/root` and create a directory named `0x02_vi`
+
+        Done?! Help
+            
+    rubric: |
+
+            Has something interesting to say.
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext1
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            
+            Tasks
+            -----
+            
+            ### 1\. Inserting
+
+            mandatory
+
+            Score: 100.0% (Checks completed: 100.0%)
+
+            What is the command to insert text before the cursor?
+
+            Write the answer into the file `/root/0x02_vi/inserting`.
+
+            You can validate if the format of your answer is correct by displaying the file information:
+
+                root@hex:~# ls -l /root/0x02_vi/inserting
+                -rw-r--r-- 1 root root 2 Nov 11 04:34 /root/0x02_vi/inserting
+                root@hex:~# 
+                
+
+
+    rubric: |
+            
+            Has something interesting to say.
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext2
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+            Tasks
+            -----
+            
+            ### 2\. Cutting
+
+            mandatory
+
+            Score: 100.0% (Checks completed: 100.0%)
+
+            What is the command to delete and cut the current line?
+
+            Write the answer into the file `/root/0x02_vi/cutting`.
+
+            **Tips:**
+
+            *   [How to Copy, Cut and Paste](/rltoken/CJZNKD3lZNMJ6UbYMz4NzA "How to Copy, Cut and Paste")
+
+
+    rubric: |
+
+            Has something interesting to say.
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext3
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+            Tasks
+            -----
+
+            ### 3\. Pasting
+
+            mandatory
+
+            Score: 100.0% (Checks completed: 100.0%)
+
+            What is the command to paste the lines in the buffer into the text after the current line?
+
+            Write the answer into the file `/root/0x02_vi/pasting`.
+
+    rubric: |
+
+            Has something interesting to say.
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext4
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+            Tasks
+            -----
+
+            ### 4\. Undoing
+
+            mandatory
+
+            Score: 100.0% (Checks completed: 100.0%)
+
+            What is the command to undo what you just did?
+
+            Write the answer into the file `/root/0x02_vi/undoing`.
+
+    rubric: |
+
+            Has something interesting to say.
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext5
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+            Tasks
+            -----
+
+            ### 5\. Exiting
+
+            mandatory
+
+            Score: 100.0% (Checks completed: 100.0%)
+
+            What is the command to quit vi even though latest changes have not been saved for this vi call?
+
+            Write the answer into the file `/root/0x02_vi/exiting`.
+
+            Done?! Help
+        
+    rubric: |
+
+            Has something interesting to say.
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext6
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+            Tasks
+            -----
+
+            ### 6\. Beginning of the line
+
+            mandatory
+
+            Score: 100.0% (Checks completed: 100.0%)
+
+            What is the command to move the cursor to the start of the current line?
+
+            Write the answer into the file `/root/0x02_vi/beginning_of_the_line`.
+    
+    rubric: |
+
+            Has something interesting to say.
+
+
+-
+    type: PythonCodeQuestionWithHumanTextFeedback
+    id: hgtext7
+    access_rules:
+        add_permissions:
+            - change_answer
+    value: 5
+    human_feedback_percentage: 100
+    is_optional_page: false
+    timeout: 10
+    prompt: |
+
+            Tasks
+            -----
+
+            ### 7\. End of the line
+
+            mandatory
+
+            Score: 100.0% (Checks completed: 100.0%)
+
+            What is the command to move the cursor to the end of the line?
+
+            Write the answer into the file `/root/0x02_vi/end_of_the_line`.
+    
+    rubric: |
+
+            Has something interesting to say.
+
+
+
+
+
+completion_text: |
+
+        You have successfully completed the test exam!
