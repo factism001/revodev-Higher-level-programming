@@ -36,7 +36,7 @@ rules:
         message: "Welcome! This message is brought to you by the access rules."
         permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
 
-    grade_identifier: la_quiz
+    grade_identifier: python_hello_world_quiz
     grade_aggregation_strategy: use_latest
 
     grading:
@@ -74,16 +74,14 @@ groups:
 
             # Question #0
 
-            Which command should you use to display the current path of your current directory?
+            Who created Python?
 
         choices:
 
-          - less
-          - touch
-          - ls
-          - ~CORRECT~ pwd
-          - cd
-          
+          - ~CORRECT~ Guido van Rossum
+          - Julien Barbier
+          - Yukihiro Matsumoto
+           
     -
         type: MultipleChoiceQuestion
         id: shell_navigation1
@@ -94,16 +92,19 @@ groups:
 
             # Question #1
             
-            Which command should you use to display the content of a file?
+            What does this command line print?
+            
+                ```
+                >>> print(f"{98} Battery street, {'San Francisco'}")
+                ```
 
         choices:
 
-          - touch
-          - ls
-          - cd
-          - pwd
-          - ~CORRECT~ less
-
+          - San Francisco Battery street, 98
+          - ~CORRECT~ 98 Battery street, San Francisco
+          - “98 Battery street, San Francisco”
+          - 8 Battery street, San
+ 
     -
         type: MultipleChoiceQuestion
         id: shell_navigation2
@@ -114,15 +115,18 @@ groups:
 
             # Question #2
             
-            Which command should you use to delete a directory?
+            What does this command line print?
+
+                ```
+                >>> a = "Python is cool"
+                >>> print(a[-2])
             
         choices:
 
-          - ~CORRECT~ rmdir
-          - mkdir
-          - rm
-          - cp
-          - mv
+          - Nothing
+          - ~CORRECT~ o
+          - ol
+          - l
 
     -
         type: MultipleChoiceQuestion
@@ -134,15 +138,19 @@ groups:
 
             # Question #3
             
-            Which command should you use to rename or move a file (or directory)?
+            What does this command line print?
+
+                ```
+                >>> a = "Python is cool"
+                >>> print(a[:6])
+                ```
 
         choices:
 
-          - rmdir
-          - mkdir
-          - rm
-          - cp
-          - ~CORRECT~ mv
+          - is cool
+          - Python is
+          - Pytho
+          - ~CORRECT~ Python
 
     -
         type: MultipleChoiceQuestion
@@ -154,15 +162,19 @@ groups:
 
             # Question #4
             
-            Which command should you use to copy a file (or directory if additional argument)?
+            What does this command line print?
+
+                ```
+                >>> a = "Python is cool"
+                >>> print(a[0:6])
+                ```
 
         choices:
 
-          - rmdir
-          - ~CORRECT~ cp
-          - mv
-          - mkdir
-          - rm
+          - Python is cool
+          - Python is
+          - ~CORRECT~ Python
+          - Pytho
     
     -
         type: MultipleChoiceQuestion
@@ -174,15 +186,19 @@ groups:
 
             # Question #5
             
-            Which command should you use to create an empty file?
+            What does this command line print?
+
+                ```
+                >>> a = "Python is cool"
+                >>> print(a[4])
+                ```
 
         choices:
 
-          - ls
-          - less
-          - cd
-          - pwd
-          - ~CORRECT~ touch
+          - h
+          - ~CORRECT~ o
+          - P
+          - n
     
     -
         type: MultipleChoiceQuestion
@@ -194,15 +210,18 @@ groups:
 
             # Question #6
             
-            Which command should you use to list all files of your current directory?
+            What does this command line print?
+
+                ```
+                >>> print("Holberton school")
+                ```
 
         choices:
 
-          - touch
-          - less
-          - cd
-          - pwd
-          - ~CORRECT~ ls
+          - ‘Holberton school’
+          - ~CORRECT~ Holberton school
+          - Holberton
+          - “Holberton school”
     
     -
         type: MultipleChoiceQuestion
@@ -214,15 +233,20 @@ groups:
 
             # Question #7
             
-            Which command should you use to create a directory?
+            What does this command line print?
+
+                ```
+                >>> a = "Python is cool"
+                >>> print(a[7:-5])
+                ```
 
         choices:
 
-          - ~CORRECT~ mkdir
-          - cp
-          - mv
-          - rmdir
-          - rm
+          - ~CORRECT~ is
+          - si
+          - Python
+          - on
+          - nohtyP
     
     -
         type: MultipleChoiceQuestion
@@ -234,17 +258,21 @@ groups:
 
             # Question #8
             
-            Which command should you use to delete a file (or directory if additional argument)?
+            What does this command line print?
+
+                ```
+                >>> a = "Python is cool"
+                >>> print(a[7:])
+                ```
 
         choices:
 
-          - cp
-          - mkdir
-          - ~CORRECT~ rm
-          - rmdir
-          - mv
+          - ~CORRECT~ is cool
+          - cool
+          - Python i
+          - Python is
 
-    -   type: MultipleChoiceQuestion
+    type: MultipleChoiceQuestion
         id: shell_navigation9
         credit_mode: exact
         value: 1
@@ -253,15 +281,18 @@ groups:
 
             # Question #9
             
-            Which command should you use to change directory?
+            What does this command line print?
+
+                ```
+                >>> print(f"{98} Battery street")
+                ```
 
         choices:
 
-          - ~CORRECT~ cd
-          - less
-          - pwd
-          - touch
-          - ls
+          - 8 Battery street
+          - 9 Battery street
+          - ~CORRECT~ 98 Battery street
+          - f"98 Battery street"
 
 
 completion_text: |

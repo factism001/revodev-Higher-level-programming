@@ -36,7 +36,7 @@ rules:
         message: "Welcome! This message is brought to you by the access rules."
         permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
 
-    grade_identifier: la_quiz
+    grade_identifier: shell_redirections_quiz
     grade_aggregation_strategy: use_latest
 
     grading:
@@ -74,15 +74,14 @@ groups:
 
             # Question #0
 
-            Which command should you use to display the current path of your current directory?
+            Which command should I use for changing a file permission?
 
         choices:
 
-          - less
-          - touch
-          - ls
-          - ~CORRECT~ pwd
-          - cd
+          - chgrp
+          - chown
+          - su
+          - ~CORRECT~ chmod
           
     -
         type: MultipleChoiceQuestion
@@ -94,15 +93,14 @@ groups:
 
             # Question #1
             
-            Which command should you use to display the content of a file?
+            What is the permission value for a file read only for the group owner?
 
         choices:
 
-          - touch
-          - ls
-          - cd
-          - pwd
-          - ~CORRECT~ less
+          - \070
+          - \060
+          - ~CORRECT~ 040
+          - \050
 
     -
         type: MultipleChoiceQuestion
@@ -114,15 +112,14 @@ groups:
 
             # Question #2
             
-            Which command should you use to delete a directory?
+            What is the numerical value for the `----w---x` permission?
             
         choices:
 
-          - ~CORRECT~ rmdir
-          - mkdir
-          - rm
-          - cp
-          - mv
+          - ~CORRECT~ 021
+          - 221
+          - 123
+          - 121
 
     -
         type: MultipleChoiceQuestion
@@ -134,15 +131,14 @@ groups:
 
             # Question #3
             
-            Which command should you use to rename or move a file (or directory)?
+            What is the numerical value for the `r-xr--r--` permission?
 
         choices:
 
-          - rmdir
-          - mkdir
-          - rm
-          - cp
-          - ~CORRECT~ mv
+          - 411
+          - 644
+          - 522
+          - ~CORRECT~ 544
 
     -
         type: MultipleChoiceQuestion
@@ -154,15 +150,14 @@ groups:
 
             # Question #4
             
-            Which command should you use to copy a file (or directory if additional argument)?
+            What is the numerical value for the `rwx------` permission?
 
         choices:
 
-          - rmdir
-          - ~CORRECT~ cp
-          - mv
-          - mkdir
-          - rm
+          - ~CORRECT~ 700
+          - 704
+          - 600
+          - 621
     
     -
         type: MultipleChoiceQuestion
@@ -174,15 +169,14 @@ groups:
 
             # Question #5
             
-            Which command should you use to create an empty file?
+            Which command should I use for changing a file owner?
 
         choices:
 
-          - ls
-          - less
-          - cd
-          - pwd
-          - ~CORRECT~ touch
+          - chgrp
+          - ~CORRECT~ chown
+          - su
+          - chmod
     
     -
         type: MultipleChoiceQuestion
@@ -194,74 +188,15 @@ groups:
 
             # Question #6
             
-            Which command should you use to list all files of your current directory?
+            What is the permission value for a file without any restriction?
 
         choices:
 
-          - touch
-          - less
-          - cd
-          - pwd
-          - ~CORRECT~ ls
+          - ~CORRECT~ 777
+          - 600
+          - 644
     
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation7
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
 
-            # Question #7
-            
-            Which command should you use to create a directory?
-
-        choices:
-
-          - ~CORRECT~ mkdir
-          - cp
-          - mv
-          - rmdir
-          - rm
-    
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation8
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
-
-            # Question #8
-            
-            Which command should you use to delete a file (or directory if additional argument)?
-
-        choices:
-
-          - cp
-          - mkdir
-          - ~CORRECT~ rm
-          - rmdir
-          - mv
-
-    -   type: MultipleChoiceQuestion
-        id: shell_navigation9
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
-
-            # Question #9
-            
-            Which command should you use to change directory?
-
-        choices:
-
-          - ~CORRECT~ cd
-          - less
-          - pwd
-          - touch
-          - ls
 
 
 completion_text: |

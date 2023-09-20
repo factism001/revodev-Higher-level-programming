@@ -36,7 +36,7 @@ rules:
         message: "Welcome! This message is brought to you by the access rules."
         permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
 
-    grade_identifier: la_quiz
+    grade_identifier: python-if_else_loops_functions_quiz
     grade_aggregation_strategy: use_latest
 
     grading:
@@ -74,16 +74,20 @@ groups:
 
             # Question #0
 
-            Which command should you use to display the current path of your current directory?
+            What do these lines print?
+
+                ```
+                if True:
+                    print("Holberton")
+                else:
+                    print("School")
+                ```
 
         choices:
 
-          - less
-          - touch
-          - ls
-          - ~CORRECT~ pwd
-          - cd
-          
+          - ~CORRECT~ Holberton
+          - School
+           
     -
         type: MultipleChoiceQuestion
         id: shell_navigation1
@@ -93,17 +97,20 @@ groups:
         prompt: |
 
             # Question #1
-            
-            Which command should you use to display the content of a file?
+            What do these lines print?
+
+                ```
+                if 12 == 48/3 or 12 is 12:
+                    print("Holberton")
+                else:
+                    print("School")
+                ```
 
         choices:
 
-          - touch
-          - ls
-          - cd
-          - pwd
-          - ~CORRECT~ less
-
+          - ~CORRECT~ Holberton
+          - School
+ 
     -
         type: MultipleChoiceQuestion
         id: shell_navigation2
@@ -114,15 +121,19 @@ groups:
 
             # Question #2
             
-            Which command should you use to delete a directory?
+            What do these lines print?
+
+                ```
+                for i in range(4):
+                    print(i, end=" ")
+                ```
             
         choices:
 
-          - ~CORRECT~ rmdir
-          - mkdir
-          - rm
-          - cp
-          - mv
+          - 0 1 2 3 4
+          - ~CORRECT~ 0 1 2 3
+          - 1 2 3 4
+          - 1 2 3
 
     -
         type: MultipleChoiceQuestion
@@ -134,15 +145,23 @@ groups:
 
             # Question #3
             
-            Which command should you use to rename or move a file (or directory)?
+            What do these lines print?
+
+                ```
+                a = 12
+                if a < 2:
+                    print("Holberton")
+                elif a % 2 == 0:
+                    print("C is fun")
+                else:
+                    print("School")
+                ```
 
         choices:
 
-          - rmdir
-          - mkdir
-          - rm
-          - cp
-          - ~CORRECT~ mv
+          - School
+          - Holberton
+          - ~CORRECT~ C is fun
 
     -
         type: MultipleChoiceQuestion
@@ -154,15 +173,24 @@ groups:
 
             # Question #4
             
-            Which command should you use to copy a file (or directory if additional argument)?
+            What do these lines print?
+
+                ```
+                a = 12
+                if a > 2:
+                    if a % 2 == 0:
+                        print("Holberton")
+                    else:
+                        print("C is fun")
+                else:
+                    print("School")
+                ```
 
         choices:
 
-          - rmdir
-          - ~CORRECT~ cp
-          - mv
-          - mkdir
-          - rm
+          - School
+          - ~CORRECT~ Holberton
+          - C is fun
     
     -
         type: MultipleChoiceQuestion
@@ -174,15 +202,19 @@ groups:
 
             # Question #5
             
-            Which command should you use to create an empty file?
+            What do these lines print?
+
+                ```
+                if 12 == 48/4:
+                    print("Holberton")
+                else:
+                    print("School")
+                ```
 
         choices:
 
-          - ls
-          - less
-          - cd
-          - pwd
-          - ~CORRECT~ touch
+          - ~CORRECT~ Holberton
+          - School
     
     -
         type: MultipleChoiceQuestion
@@ -194,15 +226,19 @@ groups:
 
             # Question #6
             
-            Which command should you use to list all files of your current directory?
+            What do these lines print?
+
+                ```
+                for i in range(2, 10, 2):
+                    print(i, end=" ")
+                ```
 
         choices:
 
-          - touch
-          - less
-          - cd
-          - pwd
-          - ~CORRECT~ ls
+          - ~CORRECT~ 2 4 6 8
+          - 4 6 8 10 12 14 16 18
+          - 2 3 4 5 6 7 8 9 10
+          - 2 3 4 5 6 7 8 9
     
     -
         type: MultipleChoiceQuestion
@@ -214,15 +250,19 @@ groups:
 
             # Question #7
             
-            Which command should you use to create a directory?
+            What do these lines print?
+
+                ```
+                for i in range(2, 4):
+                    print(i, end=" ")
+                ```
 
         choices:
 
-          - ~CORRECT~ mkdir
-          - cp
-          - mv
-          - rmdir
-          - rm
+          - 3 4
+          - 2 3 4
+          - 2 4
+          - ~CORRECT~ 2 3
     
     -
         type: MultipleChoiceQuestion
@@ -234,34 +274,21 @@ groups:
 
             # Question #8
             
-            Which command should you use to delete a file (or directory if additional argument)?
+            What do these lines print?
+
+                ```
+                if 12 == 48/4 and False:
+                    print("Holberton")
+                else:
+                    print("School")
+                ```
 
         choices:
 
-          - cp
-          - mkdir
-          - ~CORRECT~ rm
-          - rmdir
-          - mv
+          - Holberton
+          - ~CORRECT~ School
 
-    -   type: MultipleChoiceQuestion
-        id: shell_navigation9
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
 
-            # Question #9
-            
-            Which command should you use to change directory?
-
-        choices:
-
-          - ~CORRECT~ cd
-          - less
-          - pwd
-          - touch
-          - ls
 
 
 completion_text: |

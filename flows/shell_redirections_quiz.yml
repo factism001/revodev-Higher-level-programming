@@ -36,7 +36,7 @@ rules:
         message: "Welcome! This message is brought to you by the access rules."
         permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
 
-    grade_identifier: la_quiz
+    grade_identifier: shell_redirections_quiz
     grade_aggregation_strategy: use_latest
 
     grading:
@@ -74,15 +74,14 @@ groups:
 
             # Question #0
 
-            Which command should you use to display the current path of your current directory?
+            Which symbol should I use to redirect the standard output to a file (overwrite the file)?
 
         choices:
 
-          - less
-          - touch
-          - ls
-          - ~CORRECT~ pwd
-          - cd
+          - `&`
+          - ~CORRECT~ `>`
+          - `>>`
+          - `2>`
           
     -
         type: MultipleChoiceQuestion
@@ -94,15 +93,14 @@ groups:
 
             # Question #1
             
-            Which command should you use to display the content of a file?
+            Which symbol should I use to start a comment?
 
         choices:
 
-          - touch
-          - ls
-          - cd
-          - pwd
-          - ~CORRECT~ less
+          - ~CORRECT~ `#`
+          - `//`
+          - `&`
+          - `!`
 
     -
         type: MultipleChoiceQuestion
@@ -114,15 +112,14 @@ groups:
 
             # Question #2
             
-            Which command should you use to delete a directory?
+            Which symbol should I use to escape a special character?
             
         choices:
 
-          - ~CORRECT~ rmdir
-          - mkdir
-          - rm
-          - cp
-          - mv
+          - `#`
+          - `$`
+          - ~CORRECT~ `\`
+          - `!`
 
     -
         type: MultipleChoiceQuestion
@@ -134,15 +131,14 @@ groups:
 
             # Question #3
             
-            Which command should you use to rename or move a file (or directory)?
+            Which command should I use to display the last 11 lines of a file?
 
         choices:
 
-          - rmdir
-          - mkdir
-          - rm
-          - cp
-          - ~CORRECT~ mv
+          - tail 11 my\_file
+          - ~CORRECT~ tail -n 11 my\_file
+          - head -n 11 my\_file
+          - head 11 my\_file
 
     -
         type: MultipleChoiceQuestion
@@ -154,15 +150,14 @@ groups:
 
             # Question #4
             
-            Which command should you use to copy a file (or directory if additional argument)?
+            Which command should I use to display the entire file content?
 
         choices:
 
-          - rmdir
-          - ~CORRECT~ cp
-          - mv
-          - mkdir
-          - rm
+          - tail
+          - head
+          - grep
+          - ~CORRECT~ cat
     
     -
         type: MultipleChoiceQuestion
@@ -174,15 +169,13 @@ groups:
 
             # Question #5
             
-            Which command should you use to create an empty file?
-
+            Which symbol should I use to redirect the standard output to a file (appending to the file)?
         choices:
 
-          - ls
-          - less
-          - cd
-          - pwd
-          - ~CORRECT~ touch
+          - `&`
+          - `>`
+          - ~CORRECT~ `>>`
+          - `2>`
     
     -
         type: MultipleChoiceQuestion
@@ -194,74 +187,15 @@ groups:
 
             # Question #6
             
-            Which command should you use to list all files of your current directory?
+            Which symbol should I use to redirect the error output to the standard output?
 
         choices:
 
-          - touch
-          - less
-          - cd
-          - pwd
-          - ~CORRECT~ ls
+          - `1>&2`
+          - ~CORRECT~ `2>&1`
+          - `2>`
     
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation7
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
 
-            # Question #7
-            
-            Which command should you use to create a directory?
-
-        choices:
-
-          - ~CORRECT~ mkdir
-          - cp
-          - mv
-          - rmdir
-          - rm
-    
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation8
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
-
-            # Question #8
-            
-            Which command should you use to delete a file (or directory if additional argument)?
-
-        choices:
-
-          - cp
-          - mkdir
-          - ~CORRECT~ rm
-          - rmdir
-          - mv
-
-    -   type: MultipleChoiceQuestion
-        id: shell_navigation9
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
-
-            # Question #9
-            
-            Which command should you use to change directory?
-
-        choices:
-
-          - ~CORRECT~ cd
-          - less
-          - pwd
-          - touch
-          - ls
 
 
 completion_text: |

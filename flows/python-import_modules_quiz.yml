@@ -36,7 +36,7 @@ rules:
         message: "Welcome! This message is brought to you by the access rules."
         permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
 
-    grade_identifier: la_quiz
+    grade_identifier: python-import_modules_quiz
     grade_aggregation_strategy: use_latest
 
     grading:
@@ -74,15 +74,21 @@ groups:
 
             # Question #0
 
-            Which command should you use to display the current path of your current directory?
+            What do these lines print?
+
+                ```
+                >>> def my_function():
+                >>>     print("In my function")
+                >>> 
+                >>> my_function()
+                ```
 
         choices:
 
-          - less
-          - touch
-          - ls
-          - ~CORRECT~ pwd
-          - cd
+          - Nothing
+          - function my\_function at …
+          - “In my function”
+          - ~CORRECT~ In my function
           
     -
         type: MultipleChoiceQuestion
@@ -94,15 +100,20 @@ groups:
 
             # Question #1
             
-            Which command should you use to display the content of a file?
+            What do these lines print?
+
+                ```
+                >>> def my_function(counter=89):
+                >>>     print("Counter: {}".format(counter))
+                >>> 
+                >>> my_function(12)
+                ```
 
         choices:
 
-          - touch
-          - ls
-          - cd
-          - pwd
-          - ~CORRECT~ less
+          - Counter: 101
+          - ~CORRECT~ Counter: 12
+          - Counter: 89
 
     -
         type: MultipleChoiceQuestion
@@ -114,15 +125,21 @@ groups:
 
             # Question #2
             
-            Which command should you use to delete a directory?
+            What do these lines print?
+
+                ```
+                >>> def my_function(counter=89):
+                >>>     return counter + 1
+                >>> 
+                >>> print(my_function())
+                ```
             
         choices:
 
-          - ~CORRECT~ rmdir
-          - mkdir
-          - rm
-          - cp
-          - mv
+          - 891
+          - ~CORRECT~ 90
+          - 1
+          - 89
 
     -
         type: MultipleChoiceQuestion
@@ -134,15 +151,20 @@ groups:
 
             # Question #3
             
-            Which command should you use to rename or move a file (or directory)?
+            What do these lines print?
+
+                ```
+                >>> def my_function(counter=89):
+                >>>     print("Counter: {}".format(counter))
+                >>> 
+                >>> my_function()
+                ```
 
         choices:
 
-          - rmdir
-          - mkdir
-          - rm
-          - cp
-          - ~CORRECT~ mv
+          - Counter: 101
+          - Counter: 12
+          - ~CORRECT~ Counter: 89
 
     -
         type: MultipleChoiceQuestion
@@ -154,15 +176,21 @@ groups:
 
             # Question #4
             
-            Which command should you use to copy a file (or directory if additional argument)?
+            What do these lines print?
+
+                ```
+                >>> def my_function():
+                >>>     print("In my function")
+                >>> 
+                >>> my_function
+                ```
 
         choices:
 
-          - rmdir
-          - ~CORRECT~ cp
-          - mv
-          - mkdir
-          - rm
+          - Nothing
+          - ~CORRECT~ function my\_function at …
+          - “In my function”
+          - In my function
     
     -
         type: MultipleChoiceQuestion
@@ -174,94 +202,21 @@ groups:
 
             # Question #5
             
-            Which command should you use to create an empty file?
+            What do these lines print?
+
+                ```
+                >>> def my_function(counter):
+                >>>     print("Counter: {}".format(counter))
+                >>> 
+                >>> my_function(12)
+                ```
 
         choices:
 
-          - ls
-          - less
-          - cd
-          - pwd
-          - ~CORRECT~ touch
+          - ~CORRECT~ Counter: 12
+          - Counter: counter
+          - Counter: c
     
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation6
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
-
-            # Question #6
-            
-            Which command should you use to list all files of your current directory?
-
-        choices:
-
-          - touch
-          - less
-          - cd
-          - pwd
-          - ~CORRECT~ ls
-    
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation7
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
-
-            # Question #7
-            
-            Which command should you use to create a directory?
-
-        choices:
-
-          - ~CORRECT~ mkdir
-          - cp
-          - mv
-          - rmdir
-          - rm
-    
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation8
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
-
-            # Question #8
-            
-            Which command should you use to delete a file (or directory if additional argument)?
-
-        choices:
-
-          - cp
-          - mkdir
-          - ~CORRECT~ rm
-          - rmdir
-          - mv
-
-    -   type: MultipleChoiceQuestion
-        id: shell_navigation9
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
-
-            # Question #9
-            
-            Which command should you use to change directory?
-
-        choices:
-
-          - ~CORRECT~ cd
-          - less
-          - pwd
-          - touch
-          - ls
 
 
 completion_text: |
