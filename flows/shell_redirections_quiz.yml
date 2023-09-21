@@ -78,9 +78,9 @@ groups:
 
         choices:
 
-          - &
+          - .&.
           - ~CORRECT~ >
-          - >>
+          - .>>.
           - 2>
           
     -
@@ -99,7 +99,7 @@ groups:
 
           - ~CORRECT~ #
           - //
-          - &
+          - .&.
           - !
 
     -
@@ -117,7 +117,7 @@ groups:
         choices:
 
           - #
-          - $`
+          - .$.
           - ~CORRECT~ \
           - !
 
@@ -172,8 +172,8 @@ groups:
             Which symbol should I use to redirect the standard output to a file (appending to the file)?
         choices:
 
-          - &
-          - >
+          - .&.
+          - .>.
           - ~CORRECT~ >>
           - 2>
     
