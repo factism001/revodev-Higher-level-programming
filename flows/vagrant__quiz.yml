@@ -85,6 +85,7 @@ groups:
           
     -
         type: MultipleChoiceQuestion
+        title: "RELATE Test Quiz"
         id: shell_navigation1
         credit_mode: exact
         value: 1
