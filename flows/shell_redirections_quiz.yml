@@ -78,10 +78,10 @@ groups:
 
         choices:
 
-          - `&`
-          - ~CORRECT~ `>`
-          - `>>`
-          - `2>`
+          - &
+          - ~CORRECT~ >
+          - >>
+          - 2>
           
     -
         type: MultipleChoiceQuestion
@@ -97,10 +97,10 @@ groups:
 
         choices:
 
-          - ~CORRECT~ `#`
-          - `//`
-          - `&`
-          - `!`
+          - ~CORRECT~ #
+          - //
+          - &
+          - !
 
     -
         type: MultipleChoiceQuestion
@@ -116,10 +116,10 @@ groups:
             
         choices:
 
-          - `#`
-          - `$`
-          - ~CORRECT~ `\`
-          - `!`
+          - #
+          - $`
+          - ~CORRECT~ \
+          - !
 
     -
         type: MultipleChoiceQuestion
@@ -172,10 +172,10 @@ groups:
             Which symbol should I use to redirect the standard output to a file (appending to the file)?
         choices:
 
-          - `&`
-          - `>`
-          - ~CORRECT~ `>>`
-          - `2>`
+          - &
+          - >
+          - ~CORRECT~ >>
+          - 2>
     
     -
         type: MultipleChoiceQuestion
@@ -191,9 +191,9 @@ groups:
 
         choices:
 
-          - `1>&2`
-          - ~CORRECT~ `2>&1`
-          - `2>`
+          - 1>&2
+          - ~CORRECT~ 2>&1
+          - 2>
     
 
 
