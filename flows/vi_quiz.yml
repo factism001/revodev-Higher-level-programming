@@ -73,13 +73,13 @@ groups:
         prompt: |
 
             # Question #0
-	    
+
             Vi is included with almost every Linux distribution.
 
         choices:
 
           - ~CORRECT~ True
-	  - False
+          - False
           
     -
         type: MultipleChoiceQuestion
