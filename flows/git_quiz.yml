@@ -82,9 +82,9 @@ groups:
             
         choices:
 
-          - ~CORRECT~ `git add 0-test`
-          - `git add .`
-          - `git add -N 0-test`
+          - ~CORRECT~ git add 0-test
+          - git add .
+          - git add -N 0-test
            
     -
         type: MultipleChoiceQuestion
@@ -96,13 +96,13 @@ groups:
 
             # Question #1
             
-           What command can you use to see what changes have been staged, which haven’t, and which files aren’t being tracked by Git?
+            What command can you use to see what changes have been staged, which haven’t, and which files aren’t being tracked by Git?
 
         choices:
 
-          - `git checkout`
-          - `git init`
-          - ~CORRECT~ `git status`
+          - git checkout
+          - git init
+          - ~CORRECT~ git status
  
 
 
