@@ -66,6 +66,7 @@ groups:
     # them from other files, as below.
     -
         type: MultipleChoiceQuestion
+        title: "RELATE Test Quiz"
         id: shell_navigation
         credit_mode: exact
         value: 1
