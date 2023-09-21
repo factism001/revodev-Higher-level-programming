@@ -272,7 +272,8 @@ groups:
           - Python i
           - Python is
 
-    type: MultipleChoiceQuestion
+    -   
+        type: MultipleChoiceQuestion
         id: shell_navigation9
         credit_mode: exact
         value: 1
