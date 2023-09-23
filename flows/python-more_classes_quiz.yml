@@ -1,0 +1,419 @@
+# This is a YAML comment, which is entirely ignored.
+
+# YAML files in Relate are preprocessed with Jinja2.
+# See http://jinja.pocoo.org/docs/latest/templates/ for syntax.
+
+# This brings in a helper function that is used to include pages from
+# separate files. This is optional, but conceivably useful.
+{% from "yaml-macros.yml" import indented_include %}
+
+title: "RELATE Test Quiz"
+
+# The "|" character introduces a 'block literal', which means all text indented below
+# it is taken literally. The description property holds text marked up with 'Markdown'.
+# See https://documen.tician.de/relate/content.html#relate-markup for more.
+#
+# So the '#' character below introduces a first-level headline (not a comment).
+description: |
+
+    # RELATE Test Quiz
+
+rules:
+    start:
+    -
+        if_before: end_week 1
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 4
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    access:
+    -
+        message: "Welcome! This message is brought to you by the access rules."
+        permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
+
+    grade_identifier: python-more_classes_quiz
+    grade_aggregation_strategy: use_latest
+
+    grading:
+    -
+        credit_percent: 100
+
+groups:
+-
+    id: intro
+    pages:
+
+    -
+        type: Page
+        id: welcome
+        content: |
+
+            # Welcome to the test quiz for RELATE!
+
+            Don't be scared.
+
+-
+    id: quiz_start
+    shuffle: False
+    pages:
+
+    # Pages can be given in-line (like this one) or brought in by including
+    # them from other files, as below.
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #0
+
+            What do these lines print?
+
+                ```
+                class User:
+                    id = 1
+                
+                User.id = 98
+                u = User()
+                u.id = 89
+                print(User.id)
+                ```  
+
+        choices:
+
+          - ~CORRECT~ 98
+          - 89
+          - None
+          - 1
+    
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation1
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #1
+            
+            What is `__init__`?
+
+                
+        choices:
+
+          - The instance method called when a class is called for the first time
+          - ~CORRECT~ The instance method called when a new object is created
+          - A class attribute
+          - A class method
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation2
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #2
+            
+            What is `__del__`?
+
+
+        choices:
+
+          - ~CORRECT~ Instance method called when an instance is deleted
+          - Instance method that removes the last character of an instance
+          - Instance method that prints the memory address of an instance
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation3
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #3
+            
+            What do these lines print?
+
+                ```
+                class User:
+                    id = 1
+                
+                u = User()
+                User.id = 98
+                print(u.id)
+                ```
+
+        choices:
+
+          - ~CORRECT~ 98
+          - 89
+          - None
+          - 1
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation4
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #4
+            
+            What do these lines print?
+
+                ```
+                class User:
+                    id = 1
+                
+                u = User()
+                print(u.id)
+                ```
+
+        choices:
+
+          - 98
+          - 89
+          - None
+          - ~CORRECT~ 1
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation5
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #5
+            
+            What do these lines print?
+
+                ```
+                class User:
+                    id = 1
+                
+                print(User.id)
+                ```
+
+        choices:
+
+          - 98
+          - 89
+          - None
+          - ~CORRECT~1
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation6
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #6
+            
+            What do these lines print?
+
+                ```
+                class User:
+                    id = 1
+                
+                User.id = 98
+                u = User()
+                u.id = 89
+                print(u.id)
+                ```
+
+        choices:
+
+          - 98
+          - ~CORRECT~ 89
+          - None
+          - 1
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation7
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #7
+            
+            What is `__doc__`?
+
+
+        choices:
+
+          - Creates man file
+          - ~CORRECT~ The string documentation of an object (based on docstring)
+          - Prints the documentation of an object
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation8
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #8
+            
+            What do these lines print?
+
+                ```
+                class User:
+                    id = 1
+                
+                u = User()
+                u.id = 89
+                User.id = 98
+                print(User.id)
+
+
+        choices:
+
+          - ~CORRECT~ 98
+          - 89
+          - None
+          - 1
+
+    -   type: MultipleChoiceQuestion
+        id: shell_navigation9
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #9
+            
+            What is `__str__`?
+
+
+        choices:
+
+          - Instance method that prints an “informal” and nicely printable string representation of an instance
+          - ~CORRECT~ Instance method that returns an “informal” and nicely printable string representation of an instance
+          - Instance method that returns the dictionary representation of an instance
+    
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation10
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #10
+            
+            What do these lines print?
+
+                ```
+                class User:
+                    id = 1
+                
+                User.id = 98
+                u = User()
+                print(u.id)
+                ```
+
+
+        choices:
+
+          - ~CORRECT~ 98
+          - 89
+          - None
+          - 1
+
+    -   type: MultipleChoiceQuestion
+        id: shell_navigation11
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #11
+            
+            What do these lines print?
+
+                ```
+                class User:
+                    id = 1
+                
+                u = User()
+                u.id = 89
+                User.id = 98
+                print(u.id)
+                ```
+
+        choices:
+
+          - 98
+          - ~CORRECT~ 89
+          - None
+          - 1
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation12
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #12
+            
+            What do these lines print?
+
+                ```
+                class User:
+                    id = 1
+                
+                u = User()
+                u.id = 89
+                print(u.id)
+                ```
+
+
+        choices:
+
+          - 98
+          - ~CORRECT~ 89
+          - None
+          - 1
+
+    -   type: MultipleChoiceQuestion
+        id: shell_navigation13
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #13
+            
+            What is `__repr__`?
+
+        choices:
+
+          - Instance method that returns the dictionary representation of an instance
+          - ~CORRECT~ Instance method that prints an “official” string representation of an instance
+          - Instance method that returns an “official” string representation of an instance
+
+
+completion_text: |
+
+    # See you in class!
+
+    Thanks for completing the quiz.

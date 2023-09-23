@@ -1,0 +1,313 @@
+# This is a YAML comment, which is entirely ignored.
+
+# YAML files in Relate are preprocessed with Jinja2.
+# See http://jinja.pocoo.org/docs/latest/templates/ for syntax.
+
+# This brings in a helper function that is used to include pages from
+# separate files. This is optional, but conceivably useful.
+{% from "yaml-macros.yml" import indented_include %}
+
+title: "RELATE Test Quiz"
+
+# The "|" character introduces a 'block literal', which means all text indented below
+# it is taken literally. The description property holds text marked up with 'Markdown'.
+# See https://documen.tician.de/relate/content.html#relate-markup for more.
+#
+# So the '#' character below introduces a first-level headline (not a comment).
+description: |
+
+    # RELATE Test Quiz
+
+rules:
+    start:
+    -
+        if_before: end_week 1
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 4
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    access:
+    -
+        message: "Welcome! This message is brought to you by the access rules."
+        permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
+
+    grade_identifier: SQL_introduction_quiz
+    grade_aggregation_strategy: use_latest
+
+    grading:
+    -
+        credit_percent: 100
+
+groups:
+-
+    id: intro
+    pages:
+
+    -
+        type: Page
+        id: welcome
+        content: |
+
+            # Welcome to the test quiz for RELATE!
+
+            Don't be scared.
+
+-
+    id: quiz_start
+    shuffle: False
+    pages:
+
+    # Pages can be given in-line (like this one) or brought in by including
+    # them from other files, as below.
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #0
+
+            What does SQL stand for?
+
+
+        choices:
+
+          - Structured Question Language
+          - Solid Query Language
+          - Sequences of Query Logic
+          - ~CORRECT~ Structured Query Language
+    
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation1
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #1
+            
+            What does DML stand for?
+
+                
+        choices:
+
+          - Document Model Language
+          - ~CORRECT~ Data Manipulation Language
+          - Database Manipulation Language
+          - Document Manipulation Language
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation2
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #2
+            
+            How do you delete the `users` record with `id = 89` in this table?
+
+            ```
+            +-------+-------------------------------------------------------------------------------------------------------------------------------+
+            | Table | Create Table                                                                                                                  |
+            +-------+-------------------------------------------------------------------------------------------------------------------------------+
+            | users | CREATE TABLE `users` (
+            `id` int(11) DEFAULT NULL,
+            `name` varchar(256) DEFAULT NULL,
+            `age` int(11) DEFAULT NULL
+            ) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
+            +-------+-------------------------------------------------------------------------------------------------------------------------------+
+            ```
+
+
+        choices:
+
+          - DELETE FROM users WHERE id IS EQUAL TO 89;
+          - DELETE FROM users;
+          - DELETE users WHERE id = 89;
+          - ~CORRECT~ DELETE FROM users WHERE id = 89;
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation3
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #3
+            
+            How to you add a new record in the table `users`?
+
+                ```
+                +-------+-------------------------------------------------------------------------------------------------------------------------------+
+                | Table | Create Table                                                                                                                  |
+                +-------+-------------------------------------------------------------------------------------------------------------------------------+
+                | users | CREATE TABLE `users` (
+                `id` int(11) DEFAULT NULL,
+                `name` varchar(256) DEFAULT NULL,
+                `age` int(11) DEFAULT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
+                +-------+-------------------------------------------------------------------------------------------------------------------------------+
+                ```
+
+        choices:
+
+          - INSERT INTO users (id, name, age) VALUES (2, “Betty”);
+          - ~CORRECT~ INSERT INTO users (id, name, age) VALUES (2, “Betty”, 30);
+          - INSERT users (id, name, age) VALUES (2, “Betty”, 30);
+          - INSERT INTO users (id, name) VALUES (2, “Betty”, 30);
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation4
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #4
+            
+            How do you list all `users` in this table?
+
+                ```
+                +-------+-------------------------------------------------------------------------------------------------------------------------------+
+                | Table | Create Table                                                                                                                  |
+                +-------+-------------------------------------------------------------------------------------------------------------------------------+
+                | users | CREATE TABLE `users` (
+                `id` int(11) DEFAULT NULL,
+                `name` varchar(256) DEFAULT NULL,
+                `age` int(11) DEFAULT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
+                +-------+-------------------------------------------------------------------------------------------------------------------------------+
+                ```
+
+        choices:
+
+          - SELECT ALL users;
+          - DELETE \* FROM users;
+          - ~CORRECT~ SELECT \* FROM users;
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation5
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #5
+            
+            What is a relational database? (please select all correct answers)
+
+
+        choices:
+
+          - ~CORRECT~ data are organized by tables, records and columns
+          - ~CORRECT~ a table containing only one object representation
+          - a table containing multiple object representation
+          - data are organized by tables and indexes
+          - married databases
+          - ~CORRECT~ a database
+          - ~CORRECT~ a collection of data
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation6
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #6
+            
+            How do you list all `users` records with `age > 21` in this table?
+
+                ```
+                +-------+-------------------------------------------------------------------------------------------------------------------------------+
+                | Table | Create Table                                                                                                                  |
+                +-------+-------------------------------------------------------------------------------------------------------------------------------+
+                | users | CREATE TABLE `users` (
+                `id` int(11) DEFAULT NULL,
+                `name` varchar(256) DEFAULT NULL,
+                `age` int(11) DEFAULT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
+                +-------+-------------------------------------------------------------------------------------------------------------------------------+
+                ```
+
+        choices:
+
+          - SELECT \* FROM users WHERE age BETWEEN 21 AND 89;
+          - ~CORRECT~ SELECT \* FROM users WHERE age > 21;
+          - SELECT \* FROM users WHERE age < 21;
+          - SELECT \* FROM users WHERE age IS UP TO 21;
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation7
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #7
+            
+            How do you change the name of the `users` record with `id = 89` to `Holberton`?
+
+            ```
+            +-------+-------------------------------------------------------------------------------------------------------------------------------+
+            | Table | Create Table                                                                                                                  |
+            +-------+-------------------------------------------------------------------------------------------------------------------------------+
+            | users | CREATE TABLE `users` (
+            `id` int(11) DEFAULT NULL,
+            `name` varchar(256) DEFAULT NULL,
+            `age` int(11) DEFAULT NULL
+            ) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
+            +-------+-------------------------------------------------------------------------------------------------------------------------------+
+            ```
+
+
+        choices:
+
+          - Creates UPDATE users SET name = “Holberton”;
+          - ~CORRECT~ UPDATE users SET name = “Holberton” WHERE id = 89;
+          - CHANGE users SET name = “Holberton” WHERE id = 89;
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation8
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #8
+
+            What does DDL stand for?
+
+
+
+        choices:
+
+          - Document Data Language
+          - Data Document Language
+          - ~CORRECT~ Data Definition Language
+          - Database Definition Language
+
+
+
+
+completion_text: |
+
+    # See you in class!
+
+    Thanks for completing the quiz.
