@@ -1,0 +1,341 @@
+# This is a YAML comment, which is entirely ignored.
+
+# YAML files in Relate are preprocessed with Jinja2.
+# See http://jinja.pocoo.org/docs/latest/templates/ for syntax.
+
+# This brings in a helper function that is used to include pages from
+# separate files. This is optional, but conceivably useful.
+{% from "yaml-macros.yml" import indented_include %}
+
+title: "RELATE Test Quiz"
+
+# The "|" character introduces a 'block literal', which means all text indented below
+# it is taken literally. The description property holds text marked up with 'Markdown'.
+# See https://documen.tician.de/relate/content.html#relate-markup for more.
+#
+# So the '#' character below introduces a first-level headline (not a comment).
+description: |
+
+    # RELATE Test Quiz
+
+rules:
+    start:
+    -
+        if_before: end_week 1
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 4
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    access:
+    -
+        message: "Welcome! This message is brought to you by the access rules."
+        permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
+
+    grade_identifier: python-classes_quiz
+    grade_aggregation_strategy: use_latest
+
+    grading:
+    -
+        credit_percent: 100
+
+groups:
+-
+    id: intro
+    pages:
+
+    -
+        type: Page
+        id: welcome
+        content: |
+
+            # Welcome to the test quiz for RELATE!
+
+            Don't be scared.
+
+-
+    id: quiz_start
+    shuffle: False
+    pages:
+
+    # Pages can be given in-line (like this one) or brought in by including
+    # them from other files, as below.
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #0
+
+            In this following code, what is `User`?
+
+                ```
+                class User:
+                id = 89
+                name = "no name"
+                __password = None
+            
+                def __init__(self, new_name=None):
+                    self.is_new = True
+                    if new_name is not None:
+                        self.name = new_name
+                ```  
+
+        choices:
+
+          - An instance
+          - A method
+          - An attribute
+          - ~CORRECT~ A class
+          - A string
+    
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation1
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #1
+            
+            In this following code, what is `is_new`?
+
+                ```
+                class User:
+                    id = 89
+                    name = "no name"
+                    __password = None
+                
+                    def __init__(self, new_name=None):
+                        self.is_new = True
+                        if new_name is not None:
+                            self.name = new_name
+                ```
+
+        choices:
+
+          - A private instance attribute
+          - A private class attribute
+          - A protected instance attribute
+          - A protected class attribute
+          - A public class attribute
+          - ~CORRECT~ A public instance attribute
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation2
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #2
+            
+            What do these lines print?
+
+                ```
+                >>> class User:
+                >>>     id = 89
+                >>>     name = "no name"
+                >>>     __password = None
+                >>>     
+                >>>     def __init__(self, new_name=None):
+                >>>         self.is_new = True
+                >>>         if new_name is not None:
+                >>>             self.name = new_name
+                >>> 
+                >>> u = User("John")
+                >>> u.name
+                ```
+            
+        choices:
+
+          - no name
+          - ~CORRECT~ John
+          - name
+          - None
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation3
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #3
+            
+            What do these lines print?
+
+                ```
+                >>> class User:
+                >>>     id = 89
+                >>>     name = "no name"
+                >>>     __password = None
+                >>>     
+                >>>     def __init__(self, new_name=None):
+                >>>         self.is_new = True
+                >>>         if new_name is not None:
+                >>>             self.name = new_name
+                >>> 
+                >>> u = User()
+                >>> u.id
+                ```
+
+        choices:
+
+          - Nothing
+          - User.id
+          - ~CORRECT~ 89
+          - id
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation4
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #4
+            
+            What do these lines print?
+
+                ```
+                >>> class User:
+                >>>     id = 89
+                >>>     name = "no name"
+                >>>     __password = None
+                >>>     
+                >>>     def __init__(self, new_name=None):
+                >>>         self.is_new = True
+                >>>         if new_name is not None:
+                >>>             self.name = new_name
+                >>> 
+                >>> u = User()
+                >>> u.is_new
+                ```
+
+        choices:
+
+          - ~CORRECT~ True
+          - False
+          - is\_new
+          - Nothing
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation5
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #5
+            
+            In this following code, what is `id`?
+
+                ```
+                class User:
+                    id = 89
+                    name = "no name"
+                    __password = None
+                
+                    def __init__(self, new_name=None):
+                        self.is_new = True
+                        if new_name is not None:
+                            self.name = new_name
+                ```
+
+        choices:
+
+          - A protected class attribute
+          - A private class attribute
+          - A public instance method
+          - A public class method
+          - A public instance attribute
+          - ~CORRECT~ A public class attribute
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation6
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #6
+            
+            What do these lines print?
+
+                ```
+                >>> class User:
+                >>>     id = 89
+                >>>     name = "no name"
+                >>>     __password = None
+                >>>     
+                >>>     def __init__(self, new_name=None):
+                >>>         self.is_new = True
+                >>>         if new_name is not None:
+                >>>             self.name = new_name
+                >>> 
+                >>> u = User()
+                >>> u.name
+                ```
+
+        choices:
+
+          - ~CORRECT~ no name
+          - John
+          - name
+          - None
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation7
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #7
+            
+            In this following code, what is `__password`?
+
+                ```
+                class User:
+                    id = 89
+                    name = "no name"
+                    __password = None
+                
+                    def __init__(self, new_name=None):
+                        self.is_new = True
+                        if new_name is not None:
+                            self.name = new_name
+                ```
+
+        choices:
+
+          - A private instance attribute
+          - ~CORRECT~ A private class attribute
+          - A protected instance attribute
+          - A protected class attribute
+          - A public class attribute
+          - A public instance attribute
+    
+
+
+
+completion_text: |
+
+    # See you in class!
+
+    Thanks for completing the quiz.

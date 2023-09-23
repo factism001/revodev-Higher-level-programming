@@ -1,0 +1,251 @@
+# This is a YAML comment, which is entirely ignored.
+
+# YAML files in Relate are preprocessed with Jinja2.
+# See http://jinja.pocoo.org/docs/latest/templates/ for syntax.
+
+# This brings in a helper function that is used to include pages from
+# separate files. This is optional, but conceivably useful.
+{% from "yaml-macros.yml" import indented_include %}
+
+title: "RELATE Test Quiz"
+
+# The "|" character introduces a 'block literal', which means all text indented below
+# it is taken literally. The description property holds text marked up with 'Markdown'.
+# See https://documen.tician.de/relate/content.html#relate-markup for more.
+#
+# So the '#' character below introduces a first-level headline (not a comment).
+description: |
+
+    # RELATE Test Quiz
+
+rules:
+    start:
+    -
+        if_before: end_week 1
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 4
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    access:
+    -
+        message: "Welcome! This message is brought to you by the access rules."
+        permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
+
+    grade_identifier: python_test_driven_development_quiz
+    grade_aggregation_strategy: use_latest
+
+    grading:
+    -
+        credit_percent: 100
+
+groups:
+-
+    id: intro
+    pages:
+
+    -
+        type: Page
+        id: welcome
+        content: |
+
+            # Welcome to the test quiz for RELATE!
+
+            Don't be scared.
+
+-
+    id: quiz_start
+    shuffle: False
+    pages:
+
+    # Pages can be given in-line (like this one) or brought in by including
+    # them from other files, as below.
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #0
+
+            Is this a standardized way to comment a function in Python?
+
+                ```
+                /* Addition function */
+                def add(a, b):
+                    return a + b
+                ```  
+
+        choices:
+
+          - Yes
+          - ~CORRECT~ No
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation1
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #1
+            
+            Is this a standardized way to comment a function in Python?
+
+                ```
+                def add(a, b):
+                    """ Addition function """
+                    return a + b
+                ```
+
+        choices:
+
+          - Yes
+          - ~CORRECT~ No
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation2
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #2
+            
+            Based on this code, what should all the test cases be? (select multiple)
+
+                ```
+                def uniq(list):
+                    """ Returns unique values of a list """
+                    u_list = []
+                    for item in list:
+                        if item not in u_list:
+                            u_list.append(item)
+                    return u_list
+                ```
+            
+        choices:
+
+          - ~CORRECT~ list with twice the same element (same type)
+          - ~CORRECT~ not a list argument (ex: passing a dictionary to the method)
+          - ~CORRECT~ list with 2 different element (same type)
+          - ~CORRECT~ empty list
+          - ~CORRECT~ list with one element (any type)
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation3
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #3
+            
+            Is this module correctly commented?
+
+                ```
+                #!/usr/bin/python3
+                import sys
+                
+                """ 
+                    My calculation module
+                """
+                ...
+                ```
+                #### Tips:
+                Docstring must be before import statements
+
+        choices:
+
+          - Yes
+          - ~CORRECT~ No
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation4
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #4
+            
+            Is this module correctly commented?
+
+                ```
+                #!/usr/bin/python3
+                """ 
+                    My calculation module
+                """
+                import sys
+                ...
+                ```
+
+        choices:
+
+          - ~CORRECT~ Yes
+          - No
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation5
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #5
+            
+            Is this a standardized way to comment a function in Python?
+
+                ```
+                """" Addition function """
+                def add(a, b):
+                    return a + b
+                ```
+
+        choices:
+
+          - Yes
+          - ~CORRECT~ No
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation6
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #6
+            
+            Is this a standardized way to comment a function in Python?
+
+                ```
+                ##########
+                # Addition function
+                ##########
+                def add(a, b):
+                    return a + b
+                ```
+
+        choices:
+
+          - Yes
+          - ~CORRECT~ No
+
+
+
+completion_text: |
+
+    # See you in class!
+
+    Thanks for completing the quiz.
