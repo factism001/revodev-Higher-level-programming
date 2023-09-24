@@ -1,0 +1,297 @@
+# This is a YAML comment, which is entirely ignored.
+
+# YAML files in Relate are preprocessed with Jinja2.
+# See http://jinja.pocoo.org/docs/latest/templates/ for syntax.
+
+# This brings in a helper function that is used to include pages from
+# separate files. This is optional, but conceivably useful.
+{% from "yaml-macros.yml" import indented_include %}
+
+title: "RELATE Test Quiz"
+
+# The "|" character introduces a 'block literal', which means all text indented below
+# it is taken literally. The description property holds text marked up with 'Markdown'.
+# See https://documen.tician.de/relate/content.html#relate-markup for more.
+#
+# So the '#' character below introduces a first-level headline (not a comment).
+description: |
+
+    # RELATE Test Quiz
+
+rules:
+    start:
+    -
+        if_before: end_week 1
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 4
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    access:
+    -
+        message: "Welcome! This message is brought to you by the access rules."
+        permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
+
+    grade_identifier: javascript_objects_scopes_closures_quiz
+    grade_aggregation_strategy: use_latest
+
+    grading:
+    -
+        credit_percent: 100
+
+groups:
+-
+    id: intro
+    pages:
+
+    -
+        type: Page
+        id: welcome
+        content: |
+
+            # Welcome to the test quiz for RELATE!
+
+            Don't be scared.
+
+-
+    id: quiz_start
+    shuffle: False
+    pages:
+
+    # Pages can be given in-line (like this one) or brought in by including
+    # them from other files, as below.
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #0
+
+            What is the output of this code?
+
+                ```
+                function myFunction(a) {
+                    console.log(a);
+                }
+                
+                myFunction(12);
+                ```  
+
+        choices:
+
+          - 2
+          - 1
+          - ~CORRECT~ 12
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation1
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #1
+            
+            What is the output of this code?
+
+            ```
+            function myFunction(a) {
+                console.log(a);
+            }
+            
+            myFunction(89);
+            ```
+            
+
+                
+        choices:
+
+          - ~CORRECT~ 89
+          - 2
+          - 1
+          - 12
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation2
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #2
+            
+            What is the output of this code?
+
+            ```
+            function myFunction(a) {
+                console.log(a + b);
+            }
+            
+            const b = 79;
+            myFunction(10);
+            ```
+
+
+        choices:
+
+          - ~CORRECT~ 89
+          - 10
+          - 79
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation3
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #3
+            
+            What is the output of this code?
+
+                ```
+                const b = 79;
+                function myFunction(a) {
+                    console.log(a + b);
+                }
+                
+                myFunction(10);
+                ```
+
+        choices:
+
+          - 79
+          - ~CORRECT~ 89
+          - 10
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation4
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #4
+            
+            What is the output of this code?
+
+                ```
+                function myFunction(a) {
+                    console.log(a);
+                }
+                
+                const a = 12;
+                myFunction(89);
+                ```
+
+        choices:
+
+          - ~CORRECT~ 89
+          - 2
+          - 1
+          - 12
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation5
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #5
+            
+            What is the output of this code?
+
+                ```
+                const number = 12;
+                function myFunction(a) {
+                    console.log(a);
+                }
+                
+                myFunction(number);
+                ```
+
+        choices:
+
+          - 2
+          - 1
+          - ~CORRECT~12
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation6
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #6
+            
+            What is the output of this code?
+
+                ```
+                let b = 1;
+    
+                function myFunction(a) {
+                    console.log(a + b);
+                    b = a;
+                }
+                
+                myFunction(3);
+                myFunction(4);
+                ```
+
+        choices:
+
+          - 4, 3
+          - 3, 7
+          - 3, 4
+          - ~CORRECT~ 4, 7
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation7
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #7
+            
+            What is the output of this code?
+
+            ```
+            function myFunction(a) {
+                console.log(a);
+            }
+            
+            const number = 12;
+            myFunction(number);
+
+
+        choices:
+
+          - 2
+          - 1
+          - ~CORRECT~ 12
+
+
+
+
+completion_text: |
+
+    # See you in class!
+
+    Thanks for completing the quiz.

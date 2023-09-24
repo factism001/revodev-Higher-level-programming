@@ -1,0 +1,845 @@
+# This is a YAML comment, which is entirely ignored.
+
+# YAML files in Relate are preprocessed with Jinja2.
+# See http://jinja.pocoo.org/docs/latest/templates/ for syntax.
+
+# This brings in a helper function that is used to include pages from
+# separate files. This is optional, but conceivably useful.
+{% from "yaml-macros.yml" import indented_include %}
+
+title: "RELATE Test Quiz"
+
+# The "|" character introduces a 'block literal', which means all text indented below
+# it is taken literally. The description property holds text marked up with 'Markdown'.
+# See https://documen.tician.de/relate/content.html#relate-markup for more.
+#
+# So the '#' character below introduces a first-level headline (not a comment).
+description: |
+
+    # RELATE Test Quiz
+
+rules:
+    start:
+    -
+        if_before: end_week 1
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 4
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    access:
+    -
+        message: "Welcome! This message is brought to you by the access rules."
+        permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
+
+    grade_identifier: python_network_0_quiz
+    grade_aggregation_strategy: use_latest
+
+    grading:
+    -
+        credit_percent: 100
+
+groups:
+-
+    id: intro
+    pages:
+
+    -
+        type: Page
+        id: welcome
+        content: |
+
+            # Welcome to the test quiz for RELATE!
+
+            Don't be scared.
+
+-
+    id: quiz_start
+    shuffle: False
+    pages:
+
+    # Pages can be given in-line (like this one) or brought in by including
+    # them from other files, as below.
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #0
+
+            In the following URL, how many parameters are in the query string?
+
+                ```
+                https://www.google.com/apply?batch=89&location=SF
+                ```  
+
+        choices:
+
+          - 1
+          - ~CORRECT~ 2
+          - 3
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation1
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #1
+            
+            Which HTTP request header indicates the browser used by the client sending the request?
+
+                
+        choices:
+
+          - Browser-Name
+          - I-Am
+          - Origin
+          - ~CORRECT~ User-Agent
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation2
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #2
+            
+            What is the name of the HTTP response header used to define the status code of the response?
+
+
+        choices:
+
+          - Http-Status
+          - Code
+          - ~CORRECT~ Status
+          - Status-Code
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation3
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #3
+            
+            What is the name of the HTTP request header that defines the size (in bytes) of the message body?
+
+
+        choices:
+
+          - Size
+          - Content-Size
+          - ~CORRECT~ Content-Length
+          - Length
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation4
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #4
+            
+            In the following URL, what’s the hostname?
+
+                ```
+                http://www.google.com
+                ```
+
+        choices:
+
+          - www.google
+          - ~CORRECT~ www.google.com
+          - google
+          - google.com
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation5
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #5
+            
+            What will be the port number requested by this URL?
+
+                ```
+                http://www.google.com/apply
+                ```
+
+        choices:
+
+          - 22
+          - 443
+          - 8080
+          - ~CORRECT~80
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation6
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #6
+            
+            What is the `curl` option to set a body key-value parameter?
+
+                ```
+
+        choices:
+
+          - ~CORRECT~ \-d
+          - \-b
+          - \-X
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation7
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #7
+            
+            In the following URL, what’s the resource path?
+
+            ```
+            https://api.google.com/v1/auth/new
+            ```
+
+
+        choices:
+
+          - v1/auth/new/index.html
+          - ~CORRECT~ v1/auth/new
+          - v1
+          - v1/auth
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation8
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #8
+            
+            In the following URL, what’s the sub domain?
+
+                ```
+                https://api-dev.google.com/v1/auth/new
+                ```
+
+
+        choices:
+
+          - /v1
+          - ~CORRECT~ api-dev
+          - /v1/auth/new
+
+    -   type: MultipleChoiceQuestion
+        id: shell_navigation9
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #9
+            
+            What is the name of the HTTP request header used to send cookies from the client?
+
+
+        choices:
+
+          - Cookies
+          - ~CORRECT~ Cookie
+          - Set-Cookie
+          - Send-Cookie
+    
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation10
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #10
+            
+            Which `curl` option is used to set an HTTP header to a specific value?
+
+
+
+        choices:
+
+          - \-s
+          - ~CORRECT~ \-H
+          - \-X
+
+    -   type: MultipleChoiceQuestion
+        id: shell_navigation11
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #11
+            
+            In the following URL, what’s the sub domain?
+
+                ```
+                https://api.google.com/v1/auth
+                ```
+
+        choices:
+
+          - ~CORRECT~ api
+          - .com
+          - api.google
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation12
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #12
+            
+            What is the `curl` option to save the body of the resulting response to a file?
+
+                ```
+                class User:
+                    id = 1
+                
+                u = User()
+                u.id = 89
+                print(u.id)
+                ```
+
+
+        choices:
+
+          - ~CORRECT~ \-o
+          - \-r
+          - \-d
+          - \-b
+
+    -   type: MultipleChoiceQuestion
+        id: shell_navigation13
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #13
+            
+            In the following URL, what’s the name of the parameter in the query string?
+
+            ```
+            https://www.google.com/apply?batch=89
+            ```
+
+        choices:
+
+          - 89
+          - ~CORRECT~ batch
+          - apply
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation14
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #14
+            
+            What will be the port number requested by this URL?
+
+            ```
+            afp://www.google.com/access_in_port_543
+            ```
+
+                
+        choices:
+
+          - ~CORRECT~ 548
+          - 543
+          - 80
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation15
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #15
+            
+            In the following URL, how many parameters are in the query string?
+
+            ```
+            https://www.google.com/apply?batch=89&location=SF&name=John%20do%20is%20the%20best%20%3D%20c%20is%20fun
+            ```
+
+
+        choices:
+
+          - 5
+          - 4
+          - 1
+          - ~CORRECT~ 3
+          - 2
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation16
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #16
+            
+            What is the `curl` option that defines the HTTP method used?
+
+
+        choices:
+
+          - \-s
+          - \-d
+          - ~CORRECT~ \-X
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation17
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #17
+            
+            In this following HTML code, which HTTP verb will be used when you will submit this form?
+
+                ```
+                <FORM action="/login.php" method="post">
+                    <INPUT type="email" name="email" placeholder="Email" required/>
+                    <INPUT type="password" name="password" placeholder="Password" required/>
+                    <INPUT type="submit" name="submit" value="Login" />
+                <FORM>
+                ```
+
+        choices:
+
+          - GET
+          - ENTER
+          - SUBMIT
+          - ~CORRECT~ POST
+          - FORM
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation18
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #18
+            
+            What is the `curl` option to disable the progression display?
+
+
+        choices:
+
+          - \-p
+          - \-b
+          - ~CORRECT~ \-s
+          - \-c
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation19
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #19
+            
+            What is the name of the HTTP response header used to send cookies to the client from the server?
+
+
+        choices:
+
+          - Cookie-Setter
+          - Send-Cookies
+          - ~CORRECT~ Set-Cookie
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation20
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #20
+            
+            What’s the status code number for an invalid HTTP request (server can’t understand it)?
+
+
+        choices:
+
+          - ~CORRECT~ 400
+          - 500
+          - 404
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation21
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #21
+            
+            When an HTTP response indicates a redirection, which header defines the URL the client should be redirected to?
+
+
+        choices:
+
+          - Redirect
+          - Redirect-Location
+          - Next-Location
+          - Redirect-URI
+          - ~CORRECT~ Location
+
+    -   type: MultipleChoiceQuestion
+        id: shell_navigation9
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #22
+            
+            What is the name of the HTTP response header used to define the formatting of the body? (This header gives details to the client on how to interpret the data received.)
+
+
+        choices:
+
+          - ~CORRECT~ Content-Type
+          - Format
+          - Type
+          - Content-Format
+    
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation10
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #23
+            
+            What’s the status code number for a web page that can’t be found?
+
+
+        choices:
+
+          - ~CORRECT~ 500
+          - 404
+          - 405
+
+    -   type: MultipleChoiceQuestion
+        id: shell_navigation24
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #24
+            
+            In the following URL, what’s the protocol?
+
+                ```
+                http://www.google.com
+                ```
+
+        choices:
+
+          - ftp
+          - ~CORRECT~ http
+          - https
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation25
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #25
+            
+            In the following URL, what’s the resource path?
+
+                ```
+                https://www.google.com/assets/scripts/main.js
+                ```
+
+
+        choices:
+
+          - assets/scripts
+          - ~CORRECT~ assets/scripts/main.js
+          - main.js
+
+    -   type: MultipleChoiceQuestion
+        id: shell_navigation26
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #26
+            
+            What is the first digit of status codes that indicate a server error?
+
+        choices:
+
+          - ~CORRECT~ 5xx
+          - 4xx
+          - 3xx
+          - 1xx
+          - 2xx
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation27
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #27
+            
+            When you are typing `https://intranet.hbtn.io` in your browser, which HTTP verb is used?
+
+        choices:
+
+          - PUT
+          - ~CORRECT~ GET
+          - SUBMIT
+          - POST
+          - DELETE
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation28
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #28
+            
+            In this following HTML code, which HTTP verb will be used when you will submit this form?
+
+            ```
+            <FORM action="/12/update.php" method="put">
+                <INPUT type="text" name="first_name" value="Bob"/>
+                <INPUT type="text" name="last_name" value="Dylan"/>
+                <INPUT type="submit" name="update" value="Update" />
+            <FORM>
+            ```
+
+
+
+        choices:
+
+          - ~CORRECT~ PUT
+          - POST
+          - GET
+          - UPDATE
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation29
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #29
+            
+            In the following URL, what’s the resource path?
+
+            ```
+            https://www.google.com/index.html
+            ```
+
+
+        choices:
+
+          - www.google.com/index.html
+          - /
+          - ~CORRECT~ index.html
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation30
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #30
+            
+            What is the `curl` option to follow all redirects?
+
+
+        choices:
+
+          - ~CORRECT~ \-L
+          - \-s
+          - \-X
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation31
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #31
+            
+            What’s the status code number for a permanent redirection (moved permanently)?
+
+
+        choices:
+
+          - 304
+          - 302
+          - ~CORRECT~ 301
+          - 201
+          - 300
+
+    -   type: MultipleChoiceQuestion
+        id: shell_navigation32
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #32
+            
+            What is the name of the HTTP response header used to define the size, in bytes, of the body of the response?
+
+
+        choices:
+
+          - ~CORRECT~ Content-Length
+          - Length
+          - Body-Size
+          - Content-Size
+    
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation33
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #33
+            
+            What is the `curl` option to set a cookie with a key-value pair?
+
+
+        choices:
+
+          - \-c
+          - \-a
+          - \-d
+          - ~CORRECT~ \-b
+
+    -   type: MultipleChoiceQuestion
+        id: shell_navigation34
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #34
+            
+            What is the name of the HTTP response header that defines a list of available HTTP methods for this URL?
+
+
+        choices:
+
+          - Verbs-Allowed
+          - Verbs
+          - ~CORRECT~ Allow
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation35
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #35
+            
+            What will be the port number requested by this URL?
+
+                ```
+                https://www.google.com:8080/apply
+                ```
+
+
+        choices:
+
+          - 8888
+          - 80
+          - ~CORRECT~ 8080
+
+
+
+completion_text: |
+
+    # See you in class!
+
+    Thanks for completing the quiz.
