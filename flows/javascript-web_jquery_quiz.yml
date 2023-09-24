@@ -1,0 +1,724 @@
+# This is a YAML comment, which is entirely ignored.
+
+# YAML files in Relate are preprocessed with Jinja2.
+# See http://jinja.pocoo.org/docs/latest/templates/ for syntax.
+
+# This brings in a helper function that is used to include pages from
+# separate files. This is optional, but conceivably useful.
+{% from "yaml-macros.yml" import indented_include %}
+
+title: "RELATE Test Quiz"
+
+# The "|" character introduces a 'block literal', which means all text indented below
+# it is taken literally. The description property holds text marked up with 'Markdown'.
+# See https://documen.tician.de/relate/content.html#relate-markup for more.
+#
+# So the '#' character below introduces a first-level headline (not a comment).
+description: |
+
+    # RELATE Test Quiz
+
+rules:
+    start:
+    -
+        if_before: end_week 1
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 4
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    access:
+    -
+        message: "Welcome! This message is brought to you by the access rules."
+        permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
+
+    grade_identifier: javascript-web_jquery_quiz
+    grade_aggregation_strategy: use_latest
+
+    grading:
+    -
+        credit_percent: 100
+
+groups:
+-
+    id: intro
+    pages:
+
+    -
+        type: Page
+        id: welcome
+        content: |
+
+            # Welcome to the test quiz for RELATE!
+
+            Don't be scared.
+
+-
+    id: quiz_start
+    shuffle: False
+    pages:
+
+    # Pages can be given in-line (like this one) or brought in by including
+    # them from other files, as below.
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #0
+
+            In the following code snippet, does the selector called `('#my_header')` access the HTML tag `<header>`:
+
+            (using `document.querySelector` or `$(...)`)?
+
+                ```
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <title>Holberton School</title>
+                    <link rel="stylesheet" href="styles/global.css" />
+                </head>
+                <body>
+                    <header class="my_header"> 
+                    First HTML page
+                    </header>
+                    <section>
+                    <img src="logo.jpg" alt="" />
+                    <br />
+                    <ul>
+                        <li>Home</li>
+                        <li>Admission <span class="btn">apply</span></li>
+                        <li>Login</li>
+                    </ul>
+                    </section>
+                    <footer>
+                    Holberton School - 2017
+                    </footer>
+                </body>
+                </html>
+                ```  
+
+        choices:
+
+          - Yes
+          - ~CORRECT~ No
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation1
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #1
+            
+            How many HTML tags are present in the following HTML code?
+
+            *   `<!DOCTYPE html>` is not an HTML tag
+            *   `<head></head>` is considered one HTML tag.
+
+            ```
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <title>Holberton School</title>
+            </head>
+            <body>
+                <header> 
+                First HTML page
+                </header>
+                <footer>
+                Holberton School - 2017
+                </footer>
+            </body>
+            </html>
+            ```
+
+                
+        choices:
+
+          - 7
+          - ~CORRECT~ 6
+          - 4
+          - 5
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation2
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #2
+            
+            In the following code snippet, does the selector called `('.header')` access the HTML tag `<header>`:
+
+            (using `document.querySelector` or `$(...)`)?
+
+            ```
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <title>Holberton School</title>
+                <link rel="stylesheet" href="styles/global.css" />
+            </head>
+            <body>
+                <header> 
+                First HTML page
+                </header>
+                <section>
+                <img src="logo.jpg" alt="" />
+                <br />
+                <ul>
+                    <li>Home</li>
+                    <li>Admission <span class="btn">apply</span></li>
+                    <li>Login</li>
+                </ul>
+                </section>
+                <footer>
+                Holberton School - 2017
+                </footer>
+            </body>
+            </html>
+            ```
+
+
+        choices:
+
+          - Yes
+          - ~CORRECT~ No
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation3
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #3
+            
+            In the following code snippet, does the selector called `('header.my_header')` access the HTML tag `<header>`:
+
+            (using `document.querySelector` or `$(...)`)?
+
+            ```
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <title>Holberton School</title>
+                <link rel="stylesheet" href="styles/global.css" />
+            </head>
+            <body>
+                <header class="my_header"> 
+                First HTML page
+                </header>
+                <section>
+                <img src="logo.jpg" alt="" />
+                <br />
+                <ul>
+                    <li>Home</li>
+                    <li>Admission <span class="btn">apply</span></li>
+                    <li>Login</li>
+                </ul>
+                </section>
+                <footer>
+                Holberton School - 2017
+                </footer>
+            </body>
+            </html>
+            ```
+
+
+        choices:
+
+          - ~CORRECT~ Yes
+          - No
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation4
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #4
+            
+            In the following code snippet, does the selector called `('HeAdER')` access the HTML tag `<header>`:
+
+            (using `document.querySelector` or `$(...)`)?
+
+                ```
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <title>Holberton School</title>
+                    <link rel="stylesheet" href="styles/global.css" />
+                </head>
+                <body>
+                    <header> 
+                    First HTML page
+                    </header>
+                    <section>
+                    <img src="logo.jpg" alt="" />
+                    <br />
+                    <ul>
+                        <li>Home</li>
+                        <li>Admission <span class="btn">apply</span></li>
+                        <li>Login</li>
+                    </ul>
+                    </section>
+                    <footer>
+                    Holberton School - 2017
+                    </footer>
+                </body>
+                </html>
+                ```
+
+                #### Tips:
+
+                Selectors are case insensitive
+
+        choices:
+
+          - ~CORRECT~ Yes
+          - No
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation5
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #5
+            
+            In the following code snippet, does the selector called `('body header')` access the HTML tag `<header>`:
+
+            (using `document.querySelector` or `$(...)`)?
+
+                ```
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <title>Holberton School</title>
+                    <link rel="stylesheet" href="styles/global.css" />
+                </head>
+                <body>
+                    <header> 
+                    First HTML page
+                    </header>
+                    <section>
+                    <img src="logo.jpg" alt="" />
+                    <br />
+                    <ul>
+                        <li>Home</li>
+                        <li>Admission <span class="btn">apply</span></li>
+                        <li>Login</li>
+                    </ul>
+                    </section>
+                    <footer>
+                    Holberton School - 2017
+                    </footer>
+                </body>
+                </html>
+                ```
+
+        choices:
+
+          - ~CORRECT~ Yes
+          - No
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation6
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #6
+            
+            In the following code snippet, does the selector called `('section.my_header')` access the HTML tag `<header>`:
+
+            (using `document.querySelector` or `$(...)`)?
+
+                ```
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <title>Holberton School</title>
+                    <link rel="stylesheet" href="styles/global.css" />
+                </head>
+                <body>
+                    <header class="my_header"> 
+                    First HTML page
+                    </header>
+                    <section>
+                    <img src="logo.jpg" alt="" />
+                    <br />
+                    <ul>
+                        <li>Home</li>
+                        <li>Admission <span class="btn">apply</span></li>
+                        <li>Login</li>
+                    </ul>
+                    </section>
+                    <footer>
+                    Holberton School - 2017
+                    </footer>
+                </body>
+                </html>
+                ```
+
+        choices:
+
+          - Yes
+          - ~CORRECT~ No
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation7
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #7
+            
+            In the following code snippet, does the selector called `('header')` access the HTML tag `<header>`:
+
+            (using `document.querySelector` or `$(...)`)?
+
+            ```
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <title>Holberton School</title>
+                <link rel="stylesheet" href="styles/global.css" />
+            </head>
+            <body>
+                <header> 
+                First HTML page
+                </header>
+                <section>
+                <img src="logo.jpg" alt="" />
+                <br />
+                <ul>
+                    <li>Home</li>
+                    <li>Admission <span class="btn">apply</span></li>
+                    <li>Login</li>
+                </ul>
+                </section>
+                <footer>
+                Holberton School - 2017
+                </footer>
+            </body>
+            </html>
+            ```
+
+
+        choices:
+
+          - ~CORRECT~ Yes
+          - No
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation8
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #8
+            
+            In the following code snippet, does the selector called `('#my_header')` access the HTML tag `<header>`:
+
+            (using `document.querySelector` or `$(...)`)?
+
+                ```
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <title>Holberton School</title>
+                    <link rel="stylesheet" href="styles/global.css" />
+                </head>
+                <body>
+                    <header id="my_header"> 
+                    First HTML page
+                    </header>
+                    <section>
+                    <img src="logo.jpg" alt="" />
+                    <br />
+                    <ul>
+                        <li>Home</li>
+                        <li>Admission <span class="btn">apply</span></li>
+                        <li>Login</li>
+                    </ul>
+                    </section>
+                    <footer>
+                    Holberton School - 2017
+                    </footer>
+                </body>
+                </html>
+                ```
+
+
+        choices:
+
+          - ~CORRECT~ Yes
+          - No
+
+    -   type: MultipleChoiceQuestion
+        id: shell_navigation9
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #9
+            
+            How many HTML tags are present in the following HTML code?
+
+            *   `<!DOCTYPE html>` is not an HTML tag
+            *   `<head></head>` is considered one HTML tag.
+
+            ```
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <title>Holberton School</title>
+            </head>
+            <body>
+                <header> 
+                First HTML page
+                </header>
+                <section>
+                <img src="logo.jpg" alt="" />
+                <ul>
+                    <li>Home</li>
+                    <li>Admission</li>
+                    <li>Login</li>
+                </ul>
+                </section>
+                <footer>
+                Holberton School - 2017
+                </footer>
+            </body>
+            </html>
+            ```
+
+
+        choices:
+
+          - 14
+          - 13
+          - 11
+          - ~CORRECT~ 12
+    
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation10
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #10
+            
+            In the following code snippet, does the selector called `('.my_header')` access the HTML tag `<header>`:
+
+            (using `document.querySelector` or `$(...)`)?
+
+            ```
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <title>Holberton School</title>
+                <link rel="stylesheet" href="styles/global.css" />
+            </head>
+            <body>
+                <header class="my_header"> 
+                First HTML page
+                </header>
+                <section>
+                <img src="logo.jpg" alt="" />
+                <br />
+                <ul>
+                    <li>Home</li>
+                    <li>Admission <span class="btn">apply</span></li>
+                    <li>Login</li>
+                </ul>
+                </section>
+                <footer>
+                Holberton School - 2017
+                </footer>
+            </body>
+            </html>
+            ```
+
+
+
+        choices:
+
+          - ~CORRECT~ Yes
+          - No
+
+    -   type: MultipleChoiceQuestion
+        id: shell_navigation11
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #11
+            
+            In the following code snippet, does the selector called `('#my_header')` access the HTML tag `<header>`:
+
+            (using `document.querySelector` or `$(...)`)?
+
+                ```
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <title>Holberton School</title>
+                    <link rel="stylesheet" href="styles/global.css" />
+                </head>
+                <body>
+                    <header class="my_header"> 
+                    First HTML page
+                    </header>
+                    <section>
+                    <img src="logo.jpg" alt="" />
+                    <br />
+                    <ul id="my_header">
+                        <li>Home</li>
+                        <li>Admission <span class="btn">apply</span></li>
+                        <li>Login</li>
+                    </ul>
+                    </section>
+                    <footer>
+                    Holberton School - 2017
+                    </footer>
+                </body>
+                </html>
+                ```
+
+        choices:
+
+          - Yes
+          - ~CORRECT~ No
+
+    -
+        type: MultipleChoiceQuestion
+        id: shell_navigation12
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #12
+            
+            In the following code snippet, does the selector called `('#header')` access the HTML tag `<header>`:
+
+            (using `document.querySelector` or `$(...)`)?
+                ```
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <title>Holberton School</title>
+                    <link rel="stylesheet" href="styles/global.css" />
+                </head>
+                <body>
+                    <header> 
+                    First HTML page
+                    </header>
+                    <section>
+                    <img src="logo.jpg" alt="" />
+                    <br />
+                    <ul>
+                        <li>Home</li>
+                        <li>Admission <span class="btn">apply</span></li>
+                        <li>Login</li>
+                    </ul>
+                    </section>
+                    <footer>
+                    Holberton School - 2017
+                    </footer>
+                </body>
+                </html>
+                ```
+
+
+        choices:
+
+          - Yes
+          - ~CORRECT~ No
+
+    -   type: MultipleChoiceQuestion
+        id: shell_navigation13
+        credit_mode: exact
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Question #13
+            
+            How many HTML tags are present in the following HTML code?
+
+            *   `<!DOCTYPE html>` is not an HTML tag
+            *   `<head></head>` is considered one HTML tag.
+
+            ```
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <title>Holberton School</title>
+                <link rel="stylesheet" href="styles/global.css" />
+            </head>
+            <body>
+                <header> 
+                First HTML page
+                </header>
+                <section>
+                <img src="logo.jpg" alt="" />
+                <br />
+                <ul>
+                    <li>Home</li>
+                    <li>Admission <span class="btn">apply</span></li>
+                    <li>Login</li>
+                </ul>
+                </section>
+                <footer>
+                Holberton School - 2017
+                </footer>
+            </body>
+            </html>
+            ```
+
+        choices:
+
+          - 20
+          - 18
+          - ~CORRECT~ 15
+          - 16
+
+
+
+
+completion_text: |
+
+    # See you in class!
+
+    Thanks for completing the quiz.
