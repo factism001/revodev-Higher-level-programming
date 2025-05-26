@@ -274,7 +274,7 @@ groups:
         - .id.
 
     - type: MultipleChoiceQuestion
-      id: shell_navigation9
+      id: shell_navigation09
       credit_mode: exact
       value: 1
       shuffle: True
