@@ -62,297 +62,284 @@ groups:
     shuffle: False
     pages:
 
-    # Pages can be given in-line (like this one) or brought in by including
-    # them from other files, as below.
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
+    - type: MultipleChoiceQuestion
+      id: shell_navigation
+      credit_mode: exact
+      value: 1
+      shuffle: True
+      prompt: |
 
-            # Question #0
+          # Question #0
 
-            What do these lines print?
+          What do these lines print?
 
-                ```
-                >>> for i in ["Hello", "Holberton", "School", 98]:
-                >>>     print(i, end=" ")
-                ```  
+              ```
+              >>> for i in ["Hello", "Holberton", "School", 98]:
+              >>>     print(i, end=" ")
+              ```
 
-        choices:
+      choices:
 
-          - ~CORRECT~ Hello Holberton School 98
-          - 0 1 2 3
-          - 1 2 3 4
-    
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation1
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
+        - ~CORRECT~ Hello Holberton School 98
+        - 0 1 2 3
+        - 1 2 3 4
 
-            # Question #1
-            
-            What do these lines print?
+    - type: MultipleChoiceQuestion
+      id: shell_navigation1
+      credit_mode: exact
+      value: 1
+      shuffle: True
+      prompt: |
 
-                ```
-                >>> a = { 'id': 89, 'name': "John" }
-                >>> a['id']
-                ```
+          # Question #1
+          
+          What do these lines print?
 
-        choices:
+              ```
+              >>> a = { 'id': 89, 'name': "John" }
+              >>> a['id']
+              ```
 
-          - John
-          - ~CORRECT~ 89
-          - a\[‘id’\]
-          - id
-          - .id.
+      choices:
 
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation2
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
+        - John
+        - ~CORRECT~ 89
+        - a['id']
+        - id
+        - .id.
 
-            # Question #2
-            
-            What do these lines print?
+    - type: MultipleChoiceQuestion
+      id: shell_navigation2
+      credit_mode: exact
+      value: 1
+      shuffle: True
+      prompt: |
 
-                ```
-                >>> a = { 'id': 89, 'name': "John" }
-                >>> a.get('age', 0)
-                ```
-            
-        choices:
+          # Question #2
+          
+          What do these lines print?
 
-          - 89
-          - ~CORRECT~ 0
-          - .age.
-          - Nothing
+              ```
+              >>> a = { 'id': 89, 'name': "John" }
+              >>> a.get('age', 0)
+              ```
 
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation3
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
+      choices:
 
-            # Question #3
-            
-            What do these lines print?
+        - 89
+        - ~CORRECT~ 0
+        - .age.
+        - Nothing
 
-                ```
-                >>> for i in [1, 2, 3, 4]:
-                >>>     print(i, end=" ")
-                ```
+    - type: MultipleChoiceQuestion
+      id: shell_navigation3
+      credit_mode: exact
+      value: 1
+      shuffle: True
+      prompt: |
 
-        choices:
+          # Question #3
+          
+          What do these lines print?
 
-          - ~CORRECT~ 1 2 3 4
-          - 1 2 3
-          - 0 1 2 3
-          - 0 1 2 3 5
+              ```
+              >>> for i in [1, 2, 3, 4]:
+              >>>     print(i, end=" ")
+              ```
 
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation4
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
+      choices:
 
-            # Question #4
-            
-            What do these lines print?
+        - ~CORRECT~ 1 2 3 4
+        - 1 2 3
+        - 0 1 2 3
+        - 0 1 2 3 5
 
-                ```
-                >>> a = { 'id': 89, 'name': "John", 'projects': [1, 2, 3, 4], 'friends': [ { 'id': 82, 'name': "Bob" }, { 'id': 83, 'name': "Amy" } ] }
-                >>> a.get('friends')[-1].get("name")
-                ```
+    - type: MultipleChoiceQuestion
+      id: shell_navigation4
+      credit_mode: exact
+      value: 1
+      shuffle: True
+      prompt: |
 
-        choices:
+          # Question #4
+          
+          What do these lines print?
 
-          - Nothing
-          - Bob
-          - ~CORRECT~ Amy
-          - 89
-          - \[ { ‘id’: 82, ‘name’: “Bob” }, { ‘id’: 83, ‘name’: “Amy” } \]
-    
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation5
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
+              ```
+              >>> a = { 'id': 89, 'name': "John", 'projects': [1, 2, 3, 4], 'friends': [ { 'id': 82, 'name': "Bob" }, { 'id': 83, 'name': "Amy" } ] }
+              >>> a.get('friends')[-1].get("name")
+              ```
 
-            # Question #5
-            
-            What do these lines print?
+      choices:
 
-                ```
-                >>> a = { 'id': 89, 'name': "John", 'projects': [1, 2, 3, 4] }
-                >>> a.get('projects')[3]
-                ```
+        - Nothing
+        - Bob
+        - ~CORRECT~ Amy
+        - 89
+        - [ { 'id': 82, 'name': "Bob" }, { 'id': 83, 'name': "Amy" } ]
 
-        choices:
+    - type: MultipleChoiceQuestion
+      id: shell_navigation5
+      credit_mode: exact
+      value: 1
+      shuffle: True
+      prompt: |
 
-          - \[3\]
-          - 3
-          - \[1, 2, 3, 4\]
-          - ~CORRECT~ 4
-          - \[4\]
+          # Question #5
+          
+          What do these lines print?
 
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation6
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
+              ```
+              >>> a = { 'id': 89, 'name': "John", 'projects': [1, 2, 3, 4] }
+              >>> a.get('projects')[3]
+              ```
 
-            # Question #6
-            
-            What do these lines print?
+      choices:
 
-                ```
-                >>> for i in [1, 3, 4, 2]:
-                >>>     print(i, end=" ")
-                ```
+        - [3]
+        - 3
+        - [1, 2, 3, 4]
+        - ~CORRECT~ 4
+        - [4]
 
-        choices:
+    - type: MultipleChoiceQuestion
+      id: shell_navigation6
+      credit_mode: exact
+      value: 1
+      shuffle: True
+      prompt: |
 
-          - 1 3 4 2 0
-          - ~CORRECT~ 1 3 4 2
-          - 0 1 2 3
-          - 1 2 3 4
+          # Question #6
+          
+          What do these lines print?
 
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation7
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
+              ```
+              >>> for i in [1, 3, 4, 2]:
+              >>>     print(i, end=" ")
+              ```
 
-            # Question #7
-            
-            What do these lines print?
+      choices:
 
-                ```
-                >>> a = { 'id': 89, 'name': "John", 'projects': [1, 2, 3, 4] }
-                >>> a.get('projects')
-                ```
+        - 1 3 4 2 0
+        - ~CORRECT~ 1 3 4 2
+        - 0 1 2 3
+        - 1 2 3 4
 
-        choices:
+    - type: MultipleChoiceQuestion
+      id: shell_navigation7
+      credit_mode: exact
+      value: 1
+      shuffle: True
+      prompt: |
 
-          - Nothing
-          - list
-          - \[1\]
-          - .projects.
-          - ~CORRECT~ \[1, 2, 3, 4\]
-    
-    -
-        type: MultipleChoiceQuestion
-        id: shell_navigation8
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
+          # Question #7
+          
+          What do these lines print?
 
-            # Question #8
-            
-            What do these lines print?
+              ```
+              >>> a = { 'id': 89, 'name': "John", 'projects': [1, 2, 3, 4] }
+              >>> a.get('projects')
+              ```
 
-                ```
-                >>> a = { 'id': 89, 'name': "John" }
-                >>> a.get('id')
+      choices:
 
+        - Nothing
+        - list
+        - [1]
+        - .projects.
+        - ~CORRECT~ [1, 2, 3, 4]
 
-        choices:
+    - type: MultipleChoiceQuestion
+      id: shell_navigation8
+      credit_mode: exact
+      value: 1
+      shuffle: True
+      prompt: |
 
-          - John
-          - ~CORRECT~ 89
-          - a\[‘id’\]
-          - id
-          - .id.
+          # Question #8
+          
+          What do these lines print?
 
-    -   type: MultipleChoiceQuestion
-        id: shell_navigation9
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
+              ```
+              >>> a = { 'id': 89, 'name': "John" }
+              >>> a.get('id')
+              ```
 
-            # Question #9
-            
-            What do these lines print?
+      choices:
 
-                ```
-                >>> for i in range(1, 4):
-                >>>     print(i, end=" ")]
-                ```
+        - John
+        - ~CORRECT~ 89
+        - a['id']
+        - id
+        - .id.
 
-        choices:
+    - type: MultipleChoiceQuestion
+      id: shell_navigation9
+      credit_mode: exact
+      value: 1
+      shuffle: True
+      prompt: |
 
-          - 1 2 3 4
-          - ~CORRECT~ 1 2 3
-          - 0 1 2 3
-    
-        -
-        type: MultipleChoiceQuestion
-        id: shell_navigation10
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
+          # Question #9
+          
+          What do these lines print?
 
-            # Question #10
-            
-            What do these lines print?
+              ```
+              >>> for i in range(1, 4):
+              >>>     print(i, end=" ")
+              ```
 
-                ```
-                >>> for i in range(0, 3):
-                >>>     print(i, end=" ")
+      choices:
 
+        - 1 2 3 4
+        - ~CORRECT~ 1 2 3
+        - 0 1 2 3
 
-        choices:
+    - type: MultipleChoiceQuestion
+      id: shell_navigation10
+      credit_mode: exact
+      value: 1
+      shuffle: True
+      prompt: |
 
-          - ~CORRECT~ 0 1 2
-          - 1 2 3
-          - 0 1 2 3
+          # Question #10
+          
+          What do these lines print?
 
-    -   type: MultipleChoiceQuestion
-        id: shell_navigation11
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
+              ```
+              >>> for i in range(0, 3):
+              >>>     print(i, end=" ")
+              ```
 
-            # Question #11
-            
-            What do these lines print?
+      choices:
 
-                ```
-                >>> a = { 'id': 89, 'name': "John" }
-                >>> a.get('age')
-                ```
+        - ~CORRECT~ 0 1 2
+        - 1 2 3
+        - 0 1 2 3
 
-        choices:
+    - type: MultipleChoiceQuestion
+      id: shell_navigation11
+      credit_mode: exact
+      value: 1
+      shuffle: True
+      prompt: |
 
-          - ~CORRECT~ Nothing
-          - 12
-          - 89
-          - .age.
-          - Not found
+          # Question #11
+          
+          What do these lines print?
 
+              ```
+              >>> a = { 'id': 89, 'name': "John" }
+              >>> a.get('age')
+              ```
+
+      choices:
+
+        - ~CORRECT~ Nothing
+        - 12
+        - 89
+        - .age.
+        - Not found
 
 completion_text: |
 
