@@ -99,7 +99,7 @@ groups:
                 
         choices:
 
-          -~CORRECT~ Yes
+          - ~CORRECT~ Yes
           - No
 
     -
