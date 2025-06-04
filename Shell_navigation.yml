@@ -13,7 +13,7 @@ chunks:
 
             # Welcome to the course!
 
-            Please take our introductory [quiz](flow:quiz-test).
+            Please take our introductory [quiz](flow:Shell_navigation_task).
             Or via here <a href="flow:quiz-test" role="button" class="btn btn-primary">Start quiz</a>.
             # Hi there!
 
