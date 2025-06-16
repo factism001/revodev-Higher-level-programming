@@ -1,0 +1,139 @@
+chunks:
+  -
+    title: "Environment setup"
+    id: setup
+    rules:
+      - weight: 100
+    content: |
+      # Foundations
+
+        
+      **Setting up your local coding environment**  
+      **DevOps**  
+      **Virtual machine**  
+      **Weight:** 1
+
+      
+      An auto review will be launched at the deadline.
+
+      ## In a nutshell…
+
+
+
+      ## Concepts
+
+      
+      Most of the projects in this program are supposed to be done in a Linux (Ubuntu) environment.
+
+      For that matter, you will need to set up a similar environment for that purpose. It is for this reason that we have the sandboxes but to be able to work locally even when you do not have internet access, we highly recommend that you set up your own local coding environment.
+
+      This project is therefore a guide for you to set up the necessary coding environment irrespective of the operating system that you are using. Once you have set this up, you can stop using the Sandboxes and just use your local environment.
+
+      ## Guide to running Ubuntu 20.04 on different operating systems
+
+      **Windows:**  
+      You have three options for running Ubuntu on Windows:
+      - **WSL:** Windows Subsystem for Linux allows you to run Linux distributions natively on Windows.
+      - **Vagrant:** Tool for creating and managing virtual machines.
+      - **Docker:** Tool for containerizing applications (requires WSL).
+
+      **macOS:**  
+      - Mac with Apple Silicon: Only Docker supported.
+      - Mac with Intel: Vagrant or Docker supported.
+
+      This project introduces all available options. Go through them and choose the one that works for you.
+
+      ## Vagrant - or - how to code in your local computer
+
+      
+
+      ## Resources
+
+      **Read or watch:**
+      - [Virtual Machine](https://en.m.wikipedia.org/wiki/Virtual_machine "Virtual machine")
+      - [Man uname](https://linux.die.net/man/1/uname "Man uname")
+
+      ## Learning Objectives
+
+      At the end of this project, you are expected to be able to explain to anyone, **without the help of Google**:
+
+      **General**
+      - What is a virtual machine
+      - What is Vagrant
+      - Who wrote Vagrant
+      - What is Ubuntu
+      - What does “Ubuntu” mean
+      - How to use VMs with Vagrant
+      - What does the command uname do
+
+      ## Copyright - Plagiarism
+
+      - You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
+      - You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
+      - You are not allowed to publish any content of this project.
+      - Any form of plagiarism is strictly forbidden and will result in removal from the program.
+
+      ## Requirements
+
+      **General**
+      - A README.md file at the root of the repo, containing a description of the repository
+      - A README.md file, at the root of the folder of this project (i.e. 0x00-vagrant), describing what this project is about
+
+      ## More Info
+
+      **Install git**  
+      If git is not already installed on your terminal:
+      ```
+      $ sudo apt-get update
+      $ sudo apt-get upgrade
+      $ sudo apt-get install git
+      ```
+
+      **Basic usage**
+      ```
+      $ git clone <repo>
+      $ touch test
+      $ git add test
+      $ git commit -m "Initial commit"
+      $ git push origin main
+      ```
+
+      
+
+      
+
+  -
+    title: "Tasks"
+    id: tasks
+    rules:
+      - weight: 200
+    content: |
+      # Tasks
+
+      ## 0. Create and setup your Git and GitHub account
+      
+      You will need Git for this project, you might have to install it on your computer if it’s not done yet.
+
+      **On GitHub.com:**
+      - Create the repository (zero_day), no README, .gitignore, or license
+
+      **On your computer:**
+      - Navigate to your home directory
+      - Create and enter a directory `zero_day`
+      - Initialize git and add the remote origin
+      - Create a file `README.md` with a brief Markdown presentation of the project
+      - Add, commit (`"My first commit"`), and push to origin
+
+      **Repo:** zero_day  
+      **File:** README.md
+
+      ---
+
+      ## 1. Hello Ubuntu
+      
+      Inside zero_day, create a directory called `0x00-vagrant` and add a README.md file.
+
+      SSH into your Ubuntu VM.  
+      What does `uname` print without any option?  
+      Type your answer into a file in the `0x00-vagrant` directory and push it to GitHub.  
+      **File:** 0x00-vagrant/0-hello_ubuntu
