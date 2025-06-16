@@ -1,7 +1,7 @@
 chunks:
 
 -
-    title: "Python Hello World"
+    title: "Shell Navigation"
     id: welcome
     rules:
     -   if_before: end_week 3
@@ -11,9 +11,9 @@ chunks:
 
     content: |
 
-            # Welcome to the course!
+            # Welcome to the shell navigation course!
 
-            Please take our introductory [quiz](flow:Shell_navigation_task).
+            Please only take this [quiz](flow:Shell_navigation_task) after completing the study materials.
             Or via here <a href="flow:quiz-test" role="button" class="btn btn-primary">Start quiz</a>.
             # Hi there!
 
@@ -25,7 +25,7 @@ chunks:
             ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2021/2/cdc24ca146228a91564ccd17686cf1d13764896e.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20250526%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250526T122427Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=b50d3a5ce20957d7eef022ce7271a3a36108e5548df5a871a659a792721ebea5)
 
             -   This project will (probably) be your first experience with an Unix terminal!
-            -   For this project, please start and connect to your Sandbox 'Ubuntu 20.04'.
+            -   For this project, please start and connect to your 'Ubuntu 20.04'.
 
             
             Resources
@@ -76,18 +76,17 @@ chunks:
             ------------
 
             
-            -   All tasks must be done inside the sandbox Ubuntu 20.04
-            -   Your sandbox must be available at the end of this project - the Checker will access to it at midnight for running the correction!
+            -   All tasks must be done inside Ubuntu 20.04
             -   It’s recommended to start the project on a fresh new Sandbox
 
 
 -
-    title: "Python hello tas pointer"
+    title: "Shell Navigation CBT"
 
-    id: tas pointer
+    id: shell navigation
     rules:
     -
-        if_after: 2022-06-01
+        if_after: 2025-01-01
         weight: 200
 
     -
